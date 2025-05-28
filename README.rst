@@ -29,7 +29,7 @@ A Python package for performing adjacent correlation analysis on image data.
 
 The input are images 1 and image 2, in the form of Numpy arrays of the same size. The method is designed to reveal regularities by comparing these images through correlations.
 
-.. image:: images/illus_website.png
+.. image:: images/illus_website.jpg
    :alt: Adjacent Correlation Analysis
    :align: center
    :width: 500px
@@ -261,7 +261,7 @@ From which, :math:`E_x` and :math:`E_y` can be computed.
 -------------------------
 Manifold Interpretation:
 -------------------------
-.. image:: images/Interpretation.png
+.. image:: images/interpretation.png
    :alt: Manifold Interpretation
    :align: center
    :width: 500px

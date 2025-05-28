@@ -31,16 +31,27 @@ The adjacent correlation analysis is performed by calculating and visualizing th
 The  *adjacent correlation analysis* is a method to derive correlation vectors,  which can be plotted on 
 top of the density map representing the Probably Density Function (PDF) of the two images data. 
 
+.. image:: images/example_aca_brho.png
+   :alt: Example of adjacent correlation analysis
+   :align: center
+   :width: 500px
+
+
 The *adjacent correlation map* is a method to provide maps of the correlation between the two images. It contains a correlation angle map, a map of the correlation degree, and a correlation coefficient map.
 
 
-The method is fairly fast: both the adjacency correlation analysis and the adjacency correlation map have :math:`o(N)` complexity, which makes them useful for large datasets. 
+.. image:: images/adjacent_correlation_map.png
+   :alt: Example of adjacent correlation map
+   :align: center
+   :width: 500px
 
+The method is fairly fast: both the adjacency correlation analysis and the adjacency correlation map have :math:`o(N)` complexity, which makes them useful for large datasets. 
 
 
 If you make use of this software for your work we would appreciate it if you would cite the paper:
 
 Adjacent Correlation Analysis:
+
 
 * Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis， Li 2025
 

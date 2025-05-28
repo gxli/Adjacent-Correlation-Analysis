@@ -101,47 +101,64 @@ or by cloning the repository and running:
 -----------
 How to use 
 -----------
-To use the adjacent correlation analysis, you can import the necessary libraries and the module as follows:
 
 
-.. code:: python
 
-    import adjacency_correlation_analysis as aca
-
-
-To perform adjacent correlation analysis, you can use the following code:
-
-
-.. code:: python
-
-    import numpy as np
-
-There are a number of parameters
-
- -  ``n_neighbors``: This determines the number of neighboring points used in
-    local approximations of manifold structure. Larger values will result in
-    more global
-
-
+To perform the **adjacent correlation analysis**, you can use the following code:
 
 .. code:: python
 
    import adjacency_correlation_analysis as aca
+   aca.adjacent_correlation_plot(xdata, ydata)
+   plt.show()
+
+which computes the corelation vector, and generates a plot of the correlation vectors overlaid on the density density constructed from the two images.
+
+There are a number of parameters
+
+ - ``bins:`` Number or sequence of bins used to compute the histogram for density estimation. 
+              If None, an optimal bin size is automatically determined. Defaults to None.
+ -   ``ax:`` matplotlib axes object. Defaults to plt.gca().
+ -   ``scale, cmap, etc.``: plotting parameters.
+ -    ``**kwargs:`` additional arguments for ``matplotlib.pyplot.imshow`` and ``quiver``.
 
 
-To produce an adjacency correlation map, you can use the following code:
+To compute the adjacent correlation vectors, one can also use
 
 .. code:: python
 
-   import numpy as np
+   import adjacency_correlation_analysis as aca
+   p, nx, ny = aca.compute_correlation_vector(xdata, ydata, xedges, yedges)
 
-and plot the result using Matplotlib:
+where the input
+
+- ``xdata`` and ``ydata`` are the two images (Numpy arrays) to be compared.
+- ``xedges`` and ``yedges`` are the edges of the bins used to compute the histogram for density estimation.
+
+The output is a tuple containing:
+
+- ``p``: Degree of correlation 
+- ``nx``: x-component of the correlation vector
+- ``ny``: y-component of the correlation vector
+
+
+
+To compute the **adjacent correlation map**
 
 .. code:: python
 
-   import matplotlib.pyplot as plt
+   import adjacency_correlation_analysis as aca
+   p, angle, corr_coef, i = aca.compute_correlation_map(xdata, ydata)
 
+where the input
+- ``xdata`` and ``ydata`` are the two images (Numpy arrays) to be compared.
 
+The output is a tuple containing:
+
+ - ``p``: the correlation degree map, which is the normalized length of the correlation vector, p = (l_max / (l_min**2 + l_max**2)**0.5)
+ - ``angle``: the correlation angle map, which is the direction of the correlation in the phase space, angle = np.arctan2(Ey, Ex)
+ - ``corr_coef``: the correlation coefficient map, which is equivalent to the Pearson correlation coefficient.
+ - ``i``: the intensity map, which is the total gradient in the phase space,  i = (Ex**2 + Ey**2)**0.5   
 
 
 Foundation of Adjacent Correlation Analysis
@@ -154,7 +171,7 @@ Adjacency-induced correlations:
 The method is based on the observation that image values measured in adjacent locations often exhibit stronger correlations compared to image values measured over the whole region. Take the following example of the temperature and perception data from the North America:  When plotted together, we reveal a phase space where temperature and precipitation are not well-correlated. To reveal regularities, we choose three boxes (R1, R2 and R3) at different locations. From the west to the east, the temperature and precipitation exhibit correlations ranging from negative, to positive, then to weak correlations. These local correlations are undermined in the global plot, and hard to be revealed otherwise.
 
 
-The *adjacent correlation analysis* is a method to reveal these local correlations in the phase space. The *adjacent correlation analysis* provide vectors fields in the $p_1$-$p_2$ space to represent those correlations,
+The *adjacent correlation analysis* is a method to reveal these local correlations in the phase space. The *adjacent correlation analysis* provide vectors fields in the :math:`p_1-p_2` space to represent those correlations,
 
 
 
@@ -220,21 +237,20 @@ From which, :math:`E_x` and :math:`E_y` can be computed.
 
 
 
-----------
 Contribute
 ----------
 
 - Issue Tracker: github.com/Adjacent-Correlation-Analysis/issues
 - Source Code: github.com/Adjacent-Correlation-Analysis
 
-----------
+
 Support
 ----------
 
 If you are having issues, please let us know.
 We have a mailing list located at: https://groups.google.com/g/adjacentcorrelationanalysis
 
---------
+
 Citation
 --------
 If you make use of this software for your work we would appreciate it if you would cite the paper:
@@ -248,7 +264,7 @@ Adjacent Correlation Map:
 
 - Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery， Li 2025
 
--------
+
 License
 -------
 

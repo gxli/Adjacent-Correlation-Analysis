@@ -258,7 +258,6 @@ From which, :math:`E_x` and :math:`E_y` can be computed.
 
 
 
-
 -------------------------
 Manifold Interpretation:
 -------------------------

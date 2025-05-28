@@ -37,6 +37,9 @@ top of the density map representing the Probably Density Function (PDF) of the t
    :width: 500px
 
 
+**The adjacent correlation analysis applied to data from MHD turbulence simulation.**  The output consists of a correlation vector field overlaid on the density map. The correlation degree is the normalized length of the vector, and the both the length and the orientation of the vector can be seen in the *adjacent correlation plot*
+
+
 The *adjacent correlation map* is a method to provide maps of the correlation between the two images. It contains a correlation angle map, a map of the correlation degree, and a correlation coefficient map.
 
 
@@ -44,6 +47,10 @@ The *adjacent correlation map* is a method to provide maps of the correlation be
    :alt: Example of adjacent correlation map
    :align: center
    :width: 500px
+
+
+**The adjacent correlation map applied to temperature and precipitation data.**  The output consists of two maps: the correlation angle map and the correlation degree map. The correlation angle map shows the direction of the correlation in the phase space, while the correlation degree map shows the strength of the correlation. The correlation coefficient map is also provided, which is equivalent to the Pearson correlation coefficient.
+
 
 The method is fairly fast: both the adjacency correlation analysis and the adjacency correlation map have :math:`o(N)` complexity, which makes them useful for large datasets. 
 
@@ -53,11 +60,11 @@ If you make use of this software for your work we would appreciate it if you wou
 Adjacent Correlation Analysis:
 
 
-* Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis， Li 2025
+* Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis， Li (2025)
 
 Adjacent Correlation Map:
 
-* Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery， Li 2025
+* Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery， Li (2025)
 
 
 
@@ -201,14 +208,14 @@ Examples:
 
 
 
-
-
 ----------
 Contribute
 ----------
 
-- Issue Tracker: github.com/$project/$project/issues
-- Source Code: github.com/$project/$project
+$project=Adjacent-Correlation-Analysis
+
+- Issue Tracker: github.com/$project/Adjacent-Correlation-Analysis/issues
+- Source Code: github.com/Adjacent-Correlation-Analysis
 
 ----------
 Support

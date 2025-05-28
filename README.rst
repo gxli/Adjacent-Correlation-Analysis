@@ -19,12 +19,16 @@ Adjacent Correlation Analysis: Revealing Regularities in Image Data
 ..     project.do_stuff()
 
 
-
 Features & Design
 ------------------
 A Python package for performing adjacent correlation analysis on image data. 
 
 The input are images 1 and image 2, in the form of Numpy arrays of the same size. The method is designed to reveal regularities by comparing these images and constructing correlations.
+
+.. image:: images/illus_website.jpeg
+   :alt: Adjacent Correlation Analysis
+   :align: center
+   :width: 500px
 
 The adjacent correlation analysis is performed by calculating and visualizing the adjacency-induced correlation in the phase space. The adjacent correlation map is a spatially-resolved representation of the correlation between the two images.
 
@@ -140,14 +144,12 @@ and plot the result using Matplotlib:
 
 
 
-
-
---------------------------------------------------
 Foundation of Adjacent Correlation Analysis
---------------------------------------------------
+--------------------------------------------
 
+--------------------------------
 Adjacency-induced correlations:
-###############################
+--------------------------------
 
 The method is based on the observation that image values measured in adjacent locations often exhibit stronger correlations compared to image values measured over the whole region. Take the following example of the temperature and perception data from the North America:  When plotted together, we reveal a phase space where temperature and precipitation are not well-correlated. To reveal regularities, we choose three boxes (R1, R2 and R3) at different locations. From the west to the east, the temperature and precipitation exhibit correlations ranging from negative, to positive, then to weak correlations. These local correlations are undermined in the global plot, and hard to be revealed otherwise.
 
@@ -156,6 +158,11 @@ The *adjacent correlation analysis* is a method to reveal these local correlatio
 
 
 
+
+.. image:: images/adjacency_induced.png
+   :alt: Adjacent Correlation Map
+   :align: center
+   :width: 500px
 
 The *adjacent correlation map* is method to provide maps of the correlation between the two images. Given two images, :math:`p1(x, y)` and :math:`p2(x, y)`, the adjacency correlation map contains a correlation angle map,
 
@@ -176,8 +183,10 @@ where :math:`l_{min}` and :math:`l_{max}` are the minimum and maximum lengths of
 which is the equivalent to the Pearson correlation coefficient.
 
 
-Superimpose Correlations using Stokes Parameters
-################################################
+-------------------------------------------------
+Superimpose correlations using Stokes parameters
+-------------------------------------------------
+
 To superimpose the adjacent correlation vectors on the density map, we can use Stokes parameters. The Stokes parameters are a set of four parameters that describe the polarization state of light. In this case, we can use them to represent the correlation vectors in the phase space.
 
 
@@ -203,8 +212,11 @@ The stokes parameters are used to superimpose these correlation vectors, and in 
 
 From which, :math:`E_x` and :math:`E_y` can be computed. 
 
-Examples: 
-----------
+
+.. image:: images/stokes.png
+   :alt: Stokes Parameters
+   :align: center
+   :width: 500px
 
 
 
@@ -212,18 +224,15 @@ Examples:
 Contribute
 ----------
 
-$project=Adjacent-Correlation-Analysis
-
-- Issue Tracker: github.com/$project/Adjacent-Correlation-Analysis/issues
+- Issue Tracker: github.com/Adjacent-Correlation-Analysis/issues
 - Source Code: github.com/Adjacent-Correlation-Analysis
 
 ----------
 Support
 ----------
 
-
 If you are having issues, please let us know.
-We have a mailing list located at: project@google-groups.com
+We have a mailing list located at: https://groups.google.com/g/adjacentcorrelationanalysis
 
 --------
 Citation
@@ -233,6 +242,7 @@ If you make use of this software for your work we would appreciate it if you wou
 Adjacent Correlation Analysis:
 
 - Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis， Li 2025
+
 
 Adjacent Correlation Map:
 

@@ -1,0 +1,25 @@
+[project]
+name = "adjacent-correlation-analysis"
+version = "0.1.0"
+description = "A python package to reveal regularites from complex image data using correlations"
+authors = [
+    {name = "Guang-Xing Li",email = "ligx.ngc7293@gmail.com"}
+]
+license = {text = "BSD"}
+readme = "README.rst"
+requires-python = "3.0"
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+]
+
+ 
+[project.urls]
+"Homepage" = "https://github.com/yourusername/adjacent_correlation_analysis"
+"Bug Tracker" = "https://github.com/yourusername/adjacent_correlation_analysis/issues"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

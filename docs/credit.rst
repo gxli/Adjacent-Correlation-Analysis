@@ -1,0 +1,15 @@
+
+
+Citation
+--------
+If you make use of this software for your work we would appreciate it if you would cite the paper:
+
+Adjacent Correlation Analysis:
+
+- Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis， Li 2025
+
+
+Adjacent Correlation Map:
+
+- Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery， Li 2025
+

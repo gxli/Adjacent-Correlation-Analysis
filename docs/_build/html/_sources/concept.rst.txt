@@ -46,6 +46,11 @@ Superimpose correlations using Stokes parameters
 
 To superimpose the adjacent correlation vectors, we can use Stokes parameters. The Stokes parameters are a set of four parameters that describe the polarization state of light. In this case, we can use them to represent the correlation vectors.
 
+.. image:: _static/stokes.png
+   :alt: Stokes Parameters
+   :align: center
+   :width: 500px
+
 
 In the :math:`p_1-p_2` space, the correlation vector is 
 
@@ -69,10 +74,4 @@ The stokes parameters are used to superimpose these correlation vectors, and in 
 
 
 From which, :math:`E_x` and :math:`E_y` can be computed. 
-
-.. image:: images/stokes.png
-   :alt: Stokes Parameters
-   :align: center
-   :width: 500px
-
 

@@ -3,7 +3,7 @@ Credit
 
 Citation:
 --------
-If you make use of this software for your work we would appreciate it if you would cite the paper:
+If you make use of this software for your work we would appreciate it if you would cite the papers:
 
 Adjacent Correlation Analysis:
 

@@ -128,8 +128,9 @@ or by cloning the repository and running:
 
 .. code:: bash
   
-  git clone
-
+  git clone https://github.com/gxli/Adjacent-Correlation-Analysis
+  cd Adjacent-Correlation-Analysis
+  pip install -e .
 
 -----------
 How to use 

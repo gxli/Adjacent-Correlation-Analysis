@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Features &amp; Design &#8212; Adjacent-Correlation-Analysis 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Concept &amp; Methods" href="concept.html" />
+    <link rel="prev" title="Adjacent-Correlation-Analysis documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="features-design">
+<h1>Features &amp; Design<a class="headerlink" href="#features-design" title="Link to this heading">¶</a></h1>
+<p>A Python package for performing adjacent correlation analysis on image data.</p>
+<p>The input are images 1 and image 2, in the form of Numpy arrays of the same size. The method is designed to reveal regularities by comparing these images through correlations.</p>
+<a class="reference internal image-reference" href="_images/illus_website.jpg"><img alt="Adjacent Correlation Analysis" class="align-center" src="_images/illus_website.jpg" style="width: 500px;" />
+</a>
+<p>The <strong>adjacent correlation analysis</strong> is performed by calculating and visualizing the <strong>adjacency-induced correlation</strong> in the phase space. The <strong>adjacent correlation map</strong> is a spatially-resolved representation of the correlation between the two images.</p>
+<p>The methods are designed to represent the data using correlations, which can be used to perform visualization and interactive data explorations.</p>
+<section id="adjacent-correlation-analysis">
+<span id="adjacency-correlation-analysis"></span><h2>Adjacent Correlation Analysis<a class="headerlink" href="#adjacent-correlation-analysis" title="Link to this heading">¶</a></h2>
+<p>The  <em>adjacent correlation analysis</em> is a method to derive correlation vectors,  which can be plotted on
+top of the density map representing the Probably Density Function (PDF) of the two images data.</p>
+<a class="reference internal image-reference" href="_images/pdf_aca.png"><img alt="Example of adjacent correlation analysis" class="align-center" src="_images/pdf_aca.png" style="width: 500px;" />
+</a>
+<p><strong>The adjacent correlation analysis applied to data from MHD turbulence simulation.</strong>  The output consists of a correlation vector field overlaid on the density map (density PDF). The correlation degree is the normalized length of the vector, and the both the length and the orientation of the vector can be seen in the <em>adjacent correlation plot</em>.</p>
+<a class="reference internal image-reference" href="_images/pdf_aca_lorentz.png"><img alt="Example of adjacent correlation analysis" class="align-center" src="_images/pdf_aca_lorentz.png" style="width: 500px;" />
+</a>
+<p><strong>The adjacent correlation analysis applied to the Lorentz system.</strong>  The vectors derived using the adjacent correlation analysis reflects a projected view of the vector field in the phase space on the x-y plane.</p>
+</section>
+<section id="adjacent-correlation-map">
+<span id="id1"></span><h2>Adjacent Correlation Map<a class="headerlink" href="#adjacent-correlation-map" title="Link to this heading">¶</a></h2>
+<p>The <em>adjacent correlation map</em> is a method to provide maps of the correlation between the two images. It contains a correlation angle map, a map of the correlation degree, and a correlation coefficient map.</p>
+<a class="reference internal image-reference" href="_images/adjacent_correlation_map.png"><img alt="Example of adjacent correlation map" class="align-center" src="_images/adjacent_correlation_map.png" style="width: 500px;" />
+</a>
+<p><strong>The adjacent correlation map applied to temperature and precipitation data.</strong>   The output consists of a correlation angle map, a map of the correlation degree, and a correlation coefficient map (available as the program output). The correlation angle map shows the direction of the correlation in the phase space, while the correlation degree map shows the strength of the correlation. <em>Different colors represent different ways temperature T,x  and log(percipation) are correlated</em>.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Adjacent-Correlation-Analysis</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Features &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concept.html">Concept &amp; Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_analysis.html">Adjacent Correlation Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_mapping.html">Adjacent Correlation Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute and Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credit.html">Credit</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Adjacent-Correlation-Analysis documentation</a></li>
+      <li>Next: <a href="concept.html" title="next chapter">Concept &amp; Methods</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Guang-Xing Li.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/feature.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

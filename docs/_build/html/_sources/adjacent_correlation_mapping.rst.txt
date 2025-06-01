@@ -12,10 +12,16 @@ map.
 
 Load the data
 
+.. code:: bash
+
+    wget https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/NOAA_perc.npy
+    wget https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/NOAA_temp.npy
+
+
 .. code:: ipython3
 
-    data_temp = np.load('./tests/temp.fits_fixed.npy')
-    data_perc = np.load('./tests/perc.fits_fixed.npy')
+    data_temp = np.load('./NOAA_temp.npy')
+    data_perc = np.load('./NOAA_perc.npy')
     data_log_perc = np.log10(data_perc)
 
 Plot the data
@@ -48,7 +54,11 @@ Plot the data
 .. image:: _static/mapping/output_5_1.png
 
 
-Compute correlation maps:
+__________________________
+Compute correlation maps
+__________________________
+
+Compute correlation maps, using  **compute_correlation_map** function:
 
 .. code:: ipython3
 

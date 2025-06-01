@@ -13,7 +13,7 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Interactive Data Exploration:" href="interactive.html" />
+    <link rel="next" title="Interactive Data Exploration" href="interactive.html" />
     <link rel="prev" title="Adjacent Correlation Mapping" href="adjacent_correlation_mapping.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -39,14 +39,28 @@ plot using time series</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">adjacent_correlation_analysis</span> <span class="k">as</span> <span class="nn">aca</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">wget</span>
 
 <span class="c1"># load the data</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/lorentz_x.npy&quot;</span>
+<span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/lorentz_y.npy&quot;</span>
+<span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;tests/lorentz_x.npy&#39;</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;tests/lorentz_y.npy&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;lorentz_x.npy&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;lorentz_y.npy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plotting the data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/output_2_1.png" src="_images/output_2_1.png" />
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plotting the data in the phase space</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
@@ -60,7 +74,7 @@ plot using time series</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="_images/output_3_0.png" src="_images/output_3_0.png" />
+<img alt="_images/output_4_1.png" src="_images/output_4_1.png" />
 </section>
 
 
@@ -87,8 +101,9 @@ plot using time series</p>
 <li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_analysis.html">Adjacent Correlation Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_mapping.html">Adjacent Correlation Mapping</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Time Series Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Data Exploration:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Data Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute and Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credit.html">Credit</a></li>
 </ul>
 
@@ -97,7 +112,7 @@ plot using time series</p>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="adjacent_correlation_mapping.html" title="previous chapter">Adjacent Correlation Mapping</a></li>
-      <li>Next: <a href="interactive.html" title="next chapter">Interactive Data Exploration:</a></li>
+      <li>Next: <a href="interactive.html" title="next chapter">Interactive Data Exploration</a></li>
   </ul></li>
 </ul>
 </div>

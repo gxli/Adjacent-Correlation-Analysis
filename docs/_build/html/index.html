@@ -14,7 +14,7 @@
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Concept" href="concept.html" />
+    <link rel="next" title="Features &amp; Design" href="feature.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -38,13 +38,15 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="concept.html">Concept</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature.html">Features &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concept.html">Concept &amp; Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_analysis.html">Adjacent Correlation Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_mapping.html">Adjacent Correlation Mapping</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Data Exploration:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute and Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credit.html">Credit</a></li>
 </ul>
 </div>
@@ -54,26 +56,8 @@
 <p>The input are images 1 and image 2, in the form of Numpy arrays of the same size. The method is designed to reveal regularities by comparing these images through correlations.</p>
 <a class="reference internal image-reference" href="_images/illus_website.jpg"><img alt="Adjacent Correlation Analysis" class="align-center" src="_images/illus_website.jpg" style="width: 500px;" />
 </a>
-<p>The <em>adjacent correlation analysis</em> is performed by calculating and visualizing the <em>adjacency-induced correlation</em> in the phase space. The <em>adjacent correlation map</em> is a spatially-resolved representation of the correlation between the two images.</p>
+<p>The <strong>adjacent correlation analysis</strong> is performed by calculating and visualizing the <strong>adjacency-induced correlation</strong> in the phase space. The <strong>adjacent correlation map</strong> is a spatially-resolved representation of the correlation between the two images.</p>
 <p>The methods are designed to represent the data using correlations, which can be used to perform visualization and interactive data explorations.</p>
-<section id="adjacent-correlation-analysis">
-<span id="adjacency-correlation-analysis"></span><h3>Adjacent Correlation Analysis<a class="headerlink" href="#adjacent-correlation-analysis" title="Link to this heading">¶</a></h3>
-<p>The  <em>adjacent correlation analysis</em> is a method to derive correlation vectors,  which can be plotted on
-top of the density map representing the Probably Density Function (PDF) of the two images data.</p>
-<a class="reference internal image-reference" href="_images/pdf_aca.png"><img alt="Example of adjacent correlation analysis" class="align-center" src="_images/pdf_aca.png" style="width: 500px;" />
-</a>
-<p><strong>The adjacent correlation analysis applied to data from MHD turbulence simulation.</strong>  The output consists of a correlation vector field overlaid on the density map (density PDF). The correlation degree is the normalized length of the vector, and the both the length and the orientation of the vector can be seen in the <em>adjacent correlation plot</em>.</p>
-<a class="reference internal image-reference" href="_images/pdf_aca_lorentz.png"><img alt="Example of adjacent correlation analysis" class="align-center" src="_images/pdf_aca_lorentz.png" style="width: 500px;" />
-</a>
-<p><strong>The adjacent correlation analysis applied to the Lorentz system.</strong>  The vectors derived using the adjacent correlation analysis reflects a projected view of the vector field in the phase space on the x-y plane.</p>
-</section>
-<section id="adjacent-correlation-map">
-<span id="id1"></span><h3>Adjacent Correlation Map<a class="headerlink" href="#adjacent-correlation-map" title="Link to this heading">¶</a></h3>
-<p>The <em>adjacent correlation map</em> is a method to provide maps of the correlation between the two images. It contains a correlation angle map, a map of the correlation degree, and a correlation coefficient map.</p>
-<a class="reference internal image-reference" href="_images/adjacent_correlation_map.png"><img alt="Example of adjacent correlation map" class="align-center" src="_images/adjacent_correlation_map.png" style="width: 500px;" />
-</a>
-<p><strong>The adjacent correlation map applied to temperature and precipitation data.</strong>   The output consists of a correlation angle map, a map of the correlation degree, and a correlation coefficient map (available as the program output). The correlation angle map shows the direction of the correlation in the phase space, while the correlation degree map shows the strength of the correlation. <em>Different colors represent different ways temperature T,x  and log(percipation) are correlated</em>.</p>
-</section>
 </section>
 </section>
 
@@ -96,13 +80,15 @@ top of the density map representing the Probably Density Function (PDF) of the t
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="concept.html">Concept</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature.html">Features &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concept.html">Concept &amp; Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_analysis.html">Adjacent Correlation Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_mapping.html">Adjacent Correlation Mapping</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Data Exploration:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute and Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credit.html">Credit</a></li>
 </ul>
 
@@ -110,7 +96,7 @@ top of the density map representing the Probably Density Function (PDF) of the t
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="concept.html" title="next chapter">Concept</a></li>
+      <li>Next: <a href="feature.html" title="next chapter">Features &amp; Design</a></li>
   </ul></li>
 </ul>
 </div>

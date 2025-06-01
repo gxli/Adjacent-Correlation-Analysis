@@ -3,6 +3,7 @@ Adjacent Correlation Analysis
 
 To use perform the adjacent correlation analysis
 
+
 .. code:: ipython3
 
     import numpy as np
@@ -10,14 +11,20 @@ To use perform the adjacent correlation analysis
     import matplotlib.pyplot as plt
     import importlib
     from matplotlib.colors import LogNorm
-    import warnings
-    warnings.filterwarnings('ignore')
+    import wget
     
+
+    url = "https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/turing_pattern_U.npy"
+    wget.download(url)
+
+    url = "https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/turing_pattern_V.npy"
+    wget.download(url)
+
     # load the data for the activator concentration
-    data_u = np.load('./tests/pattern_U.npy')
+    data_u = np.load('./turing_pattern_U.npy')
     
     # load the data for the inhibitor concentration
-    data_v = np.load('./tests/pattern_V.npy')
+    data_v = np.load('./turing_pattern_V.npy')
 
 
 Plotting the data
@@ -44,8 +51,9 @@ Plotting the data
 .. image:: _static/aca/output_3_1.png
 
 
-Method 1
---------
+Method 1 (adjacent_correlation_plot)
+------------------------------------
+
 
 Make the *adjacent correlation plot*, using
 **adjacent_correlation_plot** function:
@@ -63,8 +71,8 @@ Make the *adjacent correlation plot*, using
 
 .. image:: _static/aca/output_5_0.png
 
-Method 2
---------
+Method (compute_correlation_vector)
+-----------------------------------
 
 Make the adjacent correlation plot, using **compute_correlation_vector**
 function:

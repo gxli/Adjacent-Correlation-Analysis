@@ -1,4 +1,4 @@
-Interactive Data Exploration:
+Interactive Exploration
 *****************************
 
 It is advertised to  use softwares such as Glue https://glueviz.org/, to visualize the data.

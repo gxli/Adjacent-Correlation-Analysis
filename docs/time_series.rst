@@ -10,15 +10,35 @@ plot using time series
     import adjacent_correlation_analysis as aca
     import numpy as np
     import matplotlib.pyplot as plt
+    import wget
     
     # load the data
+    url = "https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/lorentz_x.npy"
+    wget.download(url)
+    url = "https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/lorentz_y.npy"
+    wget.download(url)
+
     
-    x = np.load('tests/lorentz_x.npy')
-    y = np.load('tests/lorentz_y.npy')
+    x = np.load('lorentz_x.npy')
+    y = np.load('lorentz_y.npy')
+
 
 .. code:: ipython3
 
-    # plotting the data
+    # Plotting the data
+    plt.subplot(211)
+    plt.plot(x)
+    plt.subplot(212)
+    plt.plot(y)
+
+
+
+.. image:: ./_static/time_series/output_2_1.png
+
+
+.. code:: ipython3
+
+    # plotting the data in the phase space
     plt.plot(x,y)
     plt.xlabel('x')
     plt.ylabel('y')
@@ -39,7 +59,7 @@ plot using time series
 
 
 
-.. image:: ./_static/time_series/output_3_0.png
+.. image:: ./_static/time_series/output_4_1.png
 
 
 

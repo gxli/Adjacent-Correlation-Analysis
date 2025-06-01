@@ -17,7 +17,7 @@ def _compute_stokes(ex, ey, normed=False):
     q = ex**2 - ey**2
     u = 2 * ex * ey
     if normed:
-        return i/i, q/i, u/i
+        return i, q/i, u/i
     return i, q, u
 
 
@@ -113,7 +113,7 @@ def _compute_weighted_hist(values_1, values_2, data, weight, xedges, yedges):
     return n/d
 
 
-def compute_correlation_vector(xdata, ydata, xedges, yedges, weights=None, axes=None, time_like=False, projection_vector_parallel=None, projection_vector_perpendicular=None):
+def compute_correlation_vector_p_nx_ny(xdata, ydata, xedges, yedges, weights=None, axes=None, time_like=False, projection_vector_parallel=None, projection_vector_perpendicular=None):
     """compute the adjacent correlation between two measurements
 
     Args:
@@ -157,11 +157,12 @@ def compute_correlation_vector(xdata, ydata, xedges, yedges, weights=None, axes=
     if (xdata.ndim == 1): # spectra treatment when the input data is only 1d
         gradient_x = [gradient_x]
         gradient_y = [gradient_y]
-        
-   
-    if len(axes) == 1: # ??
-        gradient_x = [gradient_x]
-        gradient_y = [gradient_y]
+    
+    shape = xdata.shape
+    # ndim = len(shape)
+    # if ndim == 1: # ???
+    #     gradient_x = [gradient_x]
+    #     gradient_y = [gradient_y]
 
 
     
@@ -206,11 +207,11 @@ def compute_correlation_vector(xdata, ydata, xedges, yedges, weights=None, axes=
             hist_w_i_all = _compute_weighted_hist(values_x_all[mask_valid],valuex_y_all[mask_valid],values_i_all[mask_valid], weights)
             hist_w_q_all = _compute_weighted_hist(values_x_all[mask_valid],valuex_y_all[mask_valid],values_q_all[mask_valid], weights)
             hist_w_u_all = _compute_weighted_hist(values_x_all[mask_valid],valuex_y_all[mask_valid],values_u_all[mask_valid], weights) 
-        p, Ex_result, Ey_result = _compute_p_ex_ey(hist_w_i_all, hist_w_q_all, hist_w_u_all) # compute the polarization degree, Ex, Ey from 
+        p, nx_result, ny_result = _compute_p_ex_ey(hist_w_i_all, hist_w_q_all, hist_w_u_all) # compute the polarization degree, Ex, Ey from 
         
         stokes_i = hist_w_i_all
-        return stokes_i, p, Ex_result, Ey_result
-            
+        return p, nx_result, ny_result
+
     else:
         if weights is None:
 
@@ -229,12 +230,18 @@ def compute_correlation_vector(xdata, ydata, xedges, yedges, weights=None, axes=
         mod_vec = np.sqrt(hist_ex**2 + hist_ey**2) # compute the polarization degree, Ex, Ey from
         mod_vec_abs = np.sqrt(hist_ex_abs**2 + hist_ey_abs**2) # compute the polarization degree, Ex, Ey from
         p = mod_vec / mod_vec_abs
-        Ex_result = hist_ex / mod_vec
-        Ey_result = hist_ey / mod_vec
-        return p, Ex_result, Ey_result
+        nx_result = hist_ex / mod_vec
+        ny_result = hist_ey / mod_vec
+        return p, nx_result, ny_result
     
 
 
+def compute_correlation_vector(xdata, ydata, xedges, yedges, weights=None, axes=None, time_like=False, projection_vector_parallel=None, projection_vector_perpendicular=None):
+    p, nx, ny = compute_correlation_vector_p_nx_ny(xdata, ydata, xedges, yedges, weights, axes, time_like, projection_vector_parallel, projection_vector_perpendicular)
+    ex = nx * p
+    ey = ny * p
+    return ex, ey
+    
 def compute_correlation_map(xdata, ydata):
     """compute the correlation value between two measurements
 

@@ -130,6 +130,7 @@ or by cloning the repository and running:
   
   git clone
 
+
 -----------
 How to use 
 -----------
@@ -147,12 +148,15 @@ which computes the corelation vector, and generates a plot of the correlation ve
 
 There are a number of parameters
 
- - ``bins:`` Number or sequence of bins used to compute the histogram for density estimation. 
+   - ``bins:`` Number or sequence of bins used to compute the histogram for density estimation. 
               If None, an optimal bin size is automatically determined. Defaults to None.
- -   ``ax:`` matplotlib axes object. Defaults to plt.gca().
- -   ``scale, cmap, etc.``: plotting parameters.
- -    ``**kwargs:`` additional arguments for ``matplotlib.pyplot.imshow`` and ``quiver``.
-
+   -   ``ax:`` matplotlib axes object. Defaults to plt.gca().
+   -   ``scale, cmap, etc.``: plotting parameters.
+   -   ``**kwargs``: Additional arguments for :code:`matplotlib.pyplot.imshow` and :code:`quiver`.
+   -   ``cmap:`` colormap to be used. Defaults to 'viridis'.
+   -   ``facecolor:`` facecolor of the quiver arrows. Defaults to 'w'.
+   -   ``scale:`` scaling factor for the quiver arrows. Defaults to 20.
+   -   ``lognorm:`` whether to use logarithmic normalization for the density map. Defaults to False.
 
 To compute the adjacent correlation vectors, one can also use
 
@@ -161,7 +165,7 @@ To compute the adjacent correlation vectors, one can also use
    import numpy as np
    import adjacency_correlation_analysis as aca
    H, xedges, yedges = np.histogram2d(xdata, ydata)
-   p, nx, ny, i = aca.compute_correlation_vector(xdata, ydata, xedges, yedges)
+   ex, ey = aca.compute_correlation_vector(xdata, ydata, xedges, yedges)
 
 where the input
 
@@ -181,11 +185,14 @@ To visualize the result:
 .. code:: python
 
    import matplotlib.pyplot as plt
-   Ey = ny * p 
-   Ex = nx * p
-   plt.quiver(Ex, Ey)
-   plt.show()
+   xx = np.linspace(xedges[0], xedges[-1], len(xedges)-1)
+   yy = np.linspace(yedges[0], yedges[-1], len(yedges)-1)
+   x_grid, y_grid = np.meshgrid(xx, yy)
+    
+    # Plotting the result
+   plt.quiver(x_grid, y_grid, ex.T, ey.T, facecolor='w',angles='xy',scale=30,headaxislength=0)
 
+   
 To compute the **adjacent correlation map**
 
 .. code:: python

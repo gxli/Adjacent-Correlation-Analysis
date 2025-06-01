@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Concept &#8212; Adjacent-Correlation-Analysis 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation &amp; Usage" href="installation.html" />
+    <link rel="prev" title="Adjacent-Correlation-Analysis documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="concept">
+<h1>Concept<a class="headerlink" href="#concept" title="Link to this heading">¶</a></h1>
+<section id="adjacency-induced-correlations">
+<h2>Adjacency-induced correlations:<a class="headerlink" href="#adjacency-induced-correlations" title="Link to this heading">¶</a></h2>
+<p>The method is based on the observation that image values measured in adjacent locations often exhibit stronger correlations compared to image values measured over the whole region. Take the following example of the temperature and perception data from the North America:  When plotted together, we reveal a phase space where temperature and precipitation are not well-correlated. To reveal regularities, we choose three boxes (R1, R2 and R3) at different locations. From the west to the east, the temperature and precipitation exhibit correlations ranging from negative, to positive, then to weak correlations. These local correlations are undermined in the global correlation plot.</p>
+<a class="reference internal image-reference" href="_images/adjacency_induced.png"><img alt="Adjacent Correlation Map" class="align-center" src="_images/adjacency_induced.png" style="width: 500px;" />
+</a>
+<p><strong>Adjacency-induced correlations:</strong> Values measured in small boxes, R1, R2, and R3 are stronger than correlations measured over the whole region.</p>
+<p>The <em>adjacent correlation analysis</em> is a method to reveal these local correlations in the phase space. The <em>adjacent correlation map</em> provide maps of correlations in the space were the quantities are measured.</p>
+<p>Given two images, <span class="math notranslate nohighlight">\(p_1(x, y)\)</span> and <span class="math notranslate nohighlight">\(p_2(x, y)\)</span>, the <em>adjacency correlation map</em> contains a correlation angle map,</p>
+<div class="math notranslate nohighlight">
+\[\theta(x,y) = \arctan(\frac{ d p_2}{d p_1})\]</div>
+<p>a map of the correlation degree:</p>
+<div class="math notranslate nohighlight">
+\[p(x,y) = \frac{l_{max}}{(l_{min}^2 + l_{max}^2)^{1/2}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(l_{min}\)</span> and <span class="math notranslate nohighlight">\(l_{max}\)</span> are the minimum and maximum lengths of the correlation ellipse, and a correlation coefficient map:</p>
+<div class="math notranslate nohighlight">
+\[r(x,y) = \frac{\sigma(p_1 p_2)}{ \sigma(p_1) \sigma(p_2)}\]</div>
+<p>which is the equivalent to the Pearson correlation coefficient.</p>
+<p>The <em>adjacent correlation plot</em> is a representation of these correlations in the phase space.</p>
+</section>
+<section id="superimpose-correlations-using-stokes-parameters">
+<h2>Superimpose correlations using Stokes parameters<a class="headerlink" href="#superimpose-correlations-using-stokes-parameters" title="Link to this heading">¶</a></h2>
+<p>To superimpose the adjacent correlation vectors, we can use Stokes parameters. The Stokes parameters are a set of four parameters that describe the polarization state of light. In this case, we can use them to represent the correlation vectors.</p>
+<p>In the <span class="math notranslate nohighlight">\(p_1-p_2\)</span> space, the correlation vector is</p>
+<div class="math notranslate nohighlight">
+\[\vec{E} = (E_x, E_y) = ({d} p_1, {d} p_2)\]</div>
+<p>where the pseudo-Stokes parameters are defined as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}I = \frac{1}{2} (E_x^2 + E_y^2) \\
+Q = \frac{1}{2} (E_x^2 - E_y^2)\\
+U = E_x E_y\\\end{split}\]</div>
+<p>The stokes parameters are used to superimpose these correlation vectors, and in the last step, the correlation angle and degree can be computed from the stokes parameter using</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\theta = \frac{1}{2} \arctan \left( \frac{U}{Q} \right)\\p = \left( \left( Q/I\right)^2 + \left(U/I\right)  \right)^{1/2}\end{aligned}\end{align} \]</div>
+<p>From which, <span class="math notranslate nohighlight">\(E_x\)</span> and <span class="math notranslate nohighlight">\(E_y\)</span> can be computed.</p>
+<a class="reference internal image-reference" href="images/stokes.png"><img alt="Stokes Parameters" class="align-center" src="images/stokes.png" style="width: 500px;" />
+</a>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Adjacent-Correlation-Analysis</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Concept</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_analysis.html">Adjacent Correlation Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_mapping.html">Adjacent Correlation Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Data Exploration:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credit.html">Credit</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Adjacent-Correlation-Analysis documentation</a></li>
+      <li>Next: <a href="installation.html" title="next chapter">Installation &amp; Usage</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Guang-Xing Li.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/concept.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

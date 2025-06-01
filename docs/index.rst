@@ -10,14 +10,16 @@ Welcome to the Adjacent-Correlation-Analysis documentation!
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    concept.rst
    installation.rst
-   adjacent_correlation_mapping.rst
    adjacent_correlation_analysis.rst
+   adjacent_correlation_mapping.rst
+   time_series.rst
    interactive.rst
+   manifold.rst
    credit.rst
 
 
@@ -66,3 +68,19 @@ top of the density map representing the Probably Density Function (PDF) of the t
 **The adjacent correlation analysis applied to the Lorentz system.**  The vectors derived using the adjacent correlation analysis reflects a projected view of the vector field in the phase space on the x-y plane. 
 
 
+
+.. _adjacent-correlation-map:
+
+
+------------------------------
+Adjacent Correlation Map
+------------------------------
+The *adjacent correlation map* is a method to provide maps of the correlation between the two images. It contains a correlation angle map, a map of the correlation degree, and a correlation coefficient map.
+
+.. image:: _static/adjacent_correlation_map.png
+   :alt: Example of adjacent correlation map
+   :align: center
+   :width: 500px
+
+
+**The adjacent correlation map applied to temperature and precipitation data.**   The output consists of a correlation angle map, a map of the correlation degree, and a correlation coefficient map (available as the program output). The correlation angle map shows the direction of the correlation in the phase space, while the correlation degree map shows the strength of the correlation. *Different colors represent different ways temperature T,x  and log(percipation) are correlated*.

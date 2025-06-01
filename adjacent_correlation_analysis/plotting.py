@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-# from .analysis import compute_adjacent_correlation_vector
+from .analysis import compute_correlation_vector
 
-def adjacent_correlation_plot(xdata, ydata, bins=None, ax=None, scale=10, cmap='viridis', color_bad='lightblue', headaxislength=0, headlength=0, facecolor='w', plot_p_angle=True, plot_separate=False, xlabel='x', ylabel='y', return_r_value=False, **kwargs):
+def adjacent_correlation_plot(xdata, ydata, bins=None, ax=None, scale=10, cmap='Blues_r', color_bad='white', headaxislength=0, headlength=0, facecolor='r', plot_p_angle=True, xlabel='x', ylabel='y', return_r_value=False, lognorm=False, **kwargs):
     """Generate the adjacent correlation plot
 
     Args:
@@ -30,21 +30,19 @@ def adjacent_correlation_plot(xdata, ydata, bins=None, ax=None, scale=10, cmap='
     else:
         hist_rho, xedges, yedges = np.histogram2d(values_x, values_y, bins=bins)
     
-    p, nx, ny = compute_correlation_vector(xdata, ydata, xedges, yedges)
-    Ey = ny * p 
-    Ex = nx * p
+    Ex, Ey = compute_correlation_vector(xdata, ydata, xedges, yedges)
 
     myextent = [xedges[0], xedges[-1], yedges[0], yedges[-1]]
-    
+
     cmap = mpl.colormaps.get(cmap)
     cmap.set_bad(color=color_bad)
-    
-    ax.imshow(np.log10(hist_rho).T, origin='lower', extent=myextent, interpolation='nearest', aspect='auto', cmap=cmap)
-    
+
+    if lognorm:
+        ax.imshow(np.log10(hist_rho).T, origin='lower', extent=myextent, interpolation='nearest', aspect='auto', cmap=cmap)
+    else:
+        ax.imshow(hist_rho.T, origin='lower', extent=myextent, interpolation='nearest', aspect='auto', cmap=cmap)
     xx = np.linspace(xedges[0], xedges[-1], len(xedges)-1)
     yy = np.linspace(yedges[0], yedges[-1], len(yedges)-1)
-    dx = xedges[1] - xedges[0]
-    dy = yedges[1] - yedges[0]
     x_grid, y_grid = np.meshgrid(xx, yy)
     
     ax.quiver(x_grid, y_grid, -Ex.T, -Ey.T, headaxislength=headaxislength, facecolor=facecolor, scale=scale, headlength=headlength, pivot='middle', angles='xy')
@@ -53,23 +51,5 @@ def adjacent_correlation_plot(xdata, ydata, bins=None, ax=None, scale=10, cmap='
     
     p = np.sqrt(Ex**2 + Ey**2)
     R = np.nansum(p * hist_rho) / np.nansum(hist_rho)
-    
-    if plot_separate:
-        plt.figure()
-        plt.subplot(121)    
-        frac = np.sqrt(Ex**2 + Ey**2)
-        plt.imshow(frac.T, origin='lower', extent=myextent, aspect='auto', vmin=0, vmax=1)
-        plt.xlabel(xlabel)
-        plt.ylabel(ylabel)
-        plt.colorbar()
-        
-        ax.set_title('R = ' + str(R))
-            
-        plt.subplot(122)    
-        plt.imshow(np.arctan(Ey.T/Ex.T) / (np.pi/2), origin='lower', extent=myextent, aspect='auto', vmin=-1, vmax=1, cmap='twilight')
-        plt.colorbar()
-        plt.xlabel(xlabel)
-        plt.ylabel(ylabel)
-        plt.show()
     
     return Ex, Ey, xedges, yedges, R

@@ -337,7 +337,6 @@ Contribute
 ----------
 
 - Issue Tracker: github.com/Adjacent-Correlation-Analysis/issues
-- 
 - Source Code: github.com/Adjacent-Correlation-Analysis
 
 

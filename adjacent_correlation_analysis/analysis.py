@@ -236,6 +236,7 @@ def compute_correlation_vector_p_nx_ny(xdata, ydata, xedges, yedges, weights=Non
     
 
 
+
 def compute_correlation_vector(xdata, ydata, xedges, yedges, weights=None, axes=None, time_like=False, projection_vector_parallel=None, projection_vector_perpendicular=None):
     p, nx, ny = compute_correlation_vector_p_nx_ny(xdata, ydata, xedges, yedges, weights, axes, time_like, projection_vector_parallel, projection_vector_perpendicular)
     ex = nx * p

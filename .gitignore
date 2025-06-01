@@ -1,6 +1,0 @@
-./temp
-build_doc.sh
-./*.ipynb
-.DS_Store
-.gitattributes
-.gitignore

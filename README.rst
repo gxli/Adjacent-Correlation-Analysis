@@ -38,7 +38,7 @@ The input are images 1 and image 2, in the form of Numpy arrays of the same size
 .. image:: images/illus_website.jpg
    :alt: Adjacent Correlation Analysis
    :align: center
-   :width: 500px
+   :width: 600px
 
 
 The *adjacent correlation analysis* is performed by calculating and visualizing the *adjacency-induced correlation* in the phase space. The *adjacent correlation map* is a spatially-resolved representation of the correlation between the two images.
@@ -59,7 +59,7 @@ top of the density map representing the Probably Density Function (PDF) of the t
 .. image:: images/pdf_aca.png
    :alt: Example of adjacent correlation analysis
    :align: center
-   :width: 500px
+   :width: 600px
 
 **The adjacent correlation analysis applied to data from MHD turbulence simulation.**  The output consists of a correlation vector field overlaid on the density map (density PDF). The correlation degree is the normalized length of the vector, and the both the length and the orientation of the vector can be seen in the *adjacent correlation plot*.
 
@@ -68,7 +68,7 @@ top of the density map representing the Probably Density Function (PDF) of the t
 .. image:: images/pdf_aca_lorentz.png
    :alt: Example of adjacent correlation analysis
    :align: center
-   :width: 500px
+   :width: 600px
 
 **The adjacent correlation analysis applied to the Lorentz system.**  The vectors derived using the adjacent correlation analysis reflects a projected view of the vector field in the phase space on the x-y plane. 
 
@@ -85,7 +85,7 @@ The *adjacent correlation map* is a method to provide maps of the correlation be
 .. image:: images/adjacent_correlation_map.png
    :alt: Example of adjacent correlation map
    :align: center
-   :width: 500px
+   :width: 600px
 
 
 **The adjacent correlation map applied to temperature and precipitation data.**   The output consists of a correlation angle map, a map of the correlation degree, and a correlation coefficient map (available as the program output). The correlation angle map shows the direction of the correlation in the phase space, while the correlation degree map shows the strength of the correlation. *Different colors represent different ways temperature T,x  and log(percipation) are correlated*.
@@ -243,7 +243,7 @@ The method is based on the observation that image values measured in adjacent lo
 .. image:: images/adjacency_induced.png
    :alt: Adjacent Correlation Map
    :align: center
-   :width: 500px
+   :width: 600px
 
 **Adjacency-induced correlations:** Values measured in small boxes, R1, R2, and R3 are stronger than correlations measured over the whole region.  
 
@@ -303,7 +303,7 @@ From which, :math:`E_x` and :math:`E_y` can be computed.
 .. image:: images/stokes.png
    :alt: Stokes Parameters
    :align: center
-   :width: 500px
+   :width: 600px
 
 
 
@@ -313,7 +313,7 @@ Manifold Interpretation:
 .. image:: images/interpretation.png
    :alt: Manifold Interpretation
    :align: center
-   :width: 500px
+   :width: 600px
 
 What do the lines seen in the adjacent correlation plot mean?
 
@@ -333,7 +333,7 @@ It is advertised to  use softwares such as Glue \url{https://glueviz.org/}, to v
 .. image:: images/interactive.png
    :alt: Interactive Data Exploration
    :align: center
-   :width: 500px
+   :width: 600px
 
 **Interactive Data Exploration.**
 

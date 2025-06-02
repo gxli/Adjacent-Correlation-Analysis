@@ -6,6 +6,13 @@
 Adjacent-Correlation-Analysis documentation
 ===========================================
 
+
+.. image:: _static/aca_logo.png
+  :width: 600
+  :alt: ACA logo
+  :align: center
+
+
 Welcome to the Adjacent-Correlation-Analysis documentation!
 
 

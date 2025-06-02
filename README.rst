@@ -1,5 +1,9 @@
 .. -*- mode: rst -*-
 
+.. image:: images/aca_logo.png
+  :width: 600
+  :alt: ACA logo
+  :align: center
 
 ======================================================================
 Adjacent Correlation Analysis: Revealing Regularities in Image Data
@@ -20,6 +24,7 @@ Adjacent Correlation Analysis: Revealing Regularities in Image Data
 ..     import project
 ..     # Get your stuff done
 ..     project.do_stuff()
+
 
 
 

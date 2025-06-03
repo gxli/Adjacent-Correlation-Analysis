@@ -35,96 +35,120 @@
             
   <section id="adjacent-correlation-analysis">
 <h1>Adjacent Correlation Analysis<a class="headerlink" href="#adjacent-correlation-analysis" title="Link to this heading">¶</a></h1>
-<p>To use perform the adjacent correlation analysis</p>
+<p>Let’s walk through how to perform an adjacent correlation analysis using the <cite>adjacent_correlation_analysis</cite> package. We’ll use example data representing a <strong>Turing pattern</strong>, specifically the activator (U) and inhibitor (V) concentrations.</p>
+<p>—</p>
+<p>### Data Loading and Visualization</p>
+<p>First, we need to load our image data. These are 2D NumPy arrays, where each element represents the concentration at a specific spatial location. In this example, we’ll download these arrays, which represent Turing patterns.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">adjacent_correlation_analysis</span> <span class="k">as</span> <span class="nn">aca</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">importlib</span>
-<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LogNorm</span>
-<span class="kn">import</span> <span class="nn">wget</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LogNorm</span> <span class="c1"># For logarithmic normalization in plots</span>
+<span class="kn">import</span> <span class="nn">wget</span> <span class="c1"># To download example data; install with: pip install wget</span>
 
+<span class="c1"># Download the activator (U) and inhibitor (V) concentration data</span>
+<span class="n">url_u</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/turing_pattern_U.npy&quot;</span>
+<span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url_u</span><span class="p">)</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/turing_pattern_U.npy&quot;</span>
-<span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">url_v</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/turing_pattern_V.npy&quot;</span>
+<span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url_v</span><span class="p">)</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/gxli/Adjacent-Correlation-Analysis/blob/main/tests/turing_pattern_V.npy&quot;</span>
-<span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-<span class="c1"># load the data for the activator concentration</span>
+<span class="c1"># Load the data into NumPy arrays</span>
 <span class="n">data_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;./turing_pattern_U.npy&#39;</span><span class="p">)</span>
-
-<span class="c1"># load the data for the inhibitor concentration</span>
 <span class="n">data_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;./turing_pattern_V.npy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Plotting the data</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_u</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Activator (U)&#39;</span><span class="p">)</span>
+<p>Now, let’s visualize these two concentration maps to get a sense of the input data.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># Set figure size for better display</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_u</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span> <span class="c1"># Use a colormap for better visualization</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Activator Concentration (U)&#39;</span><span class="p">)</span> <span class="c1"># More descriptive label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Concentration&#39;</span><span class="p">)</span> <span class="c1"># Add colorbar</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_v</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Inhibitor (V)&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;Inhibitor (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_v</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;magma&#39;</span><span class="p">)</span> <span class="c1"># Use a different colormap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Inhibitor Concentration (V)&#39;</span><span class="p">)</span> <span class="c1"># More descriptive label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Concentration&#39;</span><span class="p">)</span> <span class="c1"># Add colorbar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># Adjust layout to prevent overlap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="_images/output_3_1.png" src="_images/output_3_1.png" />
-<section id="method-1-adjacent-correlation-plot">
-<h2>Method 1 (adjacent_correlation_plot)<a class="headerlink" href="#method-1-adjacent-correlation-plot" title="Link to this heading">¶</a></h2>
-<p>Make the <em>adjacent correlation plot</em>, using
-<strong>adjacent_correlation_plot</strong> function:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xedges</span><span class="p">,</span> <span class="n">yedges</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">aca</span><span class="o">.</span><span class="n">adjacent_correlation_plot</span><span class="p">(</span><span class="n">data_u</span><span class="p">,</span><span class="n">data_v</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">lognorm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<p>—</p>
+<p>### Method 1: Using <cite>adjacent_correlation_plot</cite></p>
+<p>The <cite>adjacent_correlation_plot</cite> function provides a convenient way to directly generate the <strong>adjacent correlation plot</strong>, overlaying correlation vectors onto the density map in phase space. This method is ideal for quick visualization of the overall correlation structure.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate the adjacent correlation plot</span>
+<span class="c1"># R is a tuple containing raw correlation data or matrices, depending on the function&#39;s internal design.</span>
+<span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xedges</span><span class="p">,</span> <span class="n">yedges</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">aca</span><span class="o">.</span><span class="n">adjacent_correlation_plot</span><span class="p">(</span>
+    <span class="n">data_u</span><span class="p">,</span> <span class="n">data_v</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">lognorm</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="c1"># Customize the plot</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Turing Pattern&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Activator Concentration (U)&#39;</span><span class="p">)</span> <span class="c1"># More descriptive label</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Inhibitor Concentration (V)&#39;</span><span class="p">)</span> <span class="c1"># More descriptive label</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Adjacent Correlation Plot for Turing Pattern&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="_images/output_5_0.png" src="_images/output_5_0.png" />
-</section>
-<section id="method-compute-correlation-vector">
-<h2>Method (compute_correlation_vector)<a class="headerlink" href="#method-compute-correlation-vector" title="Link to this heading">¶</a></h2>
-<p>Make the adjacent correlation plot, using <strong>compute_correlation_vector</strong>
-function:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<p>—</p>
+<p>### Method 2: Using <cite>compute_correlation_vector</cite> for Custom Plotting</p>
+<p>For more granular control over plotting, you can first compute the correlation vectors using the <cite>compute_correlation_vector</cite> function. This approach gives you the flexibility to add custom background plots, combine with other visualizations, or analyze the vectors numerically.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span> <span class="c1"># Adjust figure size</span>
 
-<span class="n">h</span><span class="p">,</span> <span class="n">xedges</span><span class="p">,</span> <span class="n">yedges</span><span class="p">,</span> <span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist2d</span><span class="p">(</span><span class="n">data_u</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">data_v</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">bins</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">())</span>
+<span class="c1"># First, create the 2D histogram (density map) as a background</span>
+<span class="n">h</span><span class="p">,</span> <span class="n">xedges</span><span class="p">,</span> <span class="n">yedges</span><span class="p">,</span> <span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist2d</span><span class="p">(</span>
+    <span class="n">data_u</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">data_v</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys&#39;</span> <span class="c1"># Use LogNorm and a grayscale colormap for background</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Density (Log Scale)&#39;</span><span class="p">)</span> <span class="c1"># Add colorbar for density</span>
 
+<span class="c1"># Compute the correlation vectors</span>
 <span class="n">ex</span><span class="p">,</span> <span class="n">ey</span> <span class="o">=</span> <span class="n">aca</span><span class="o">.</span><span class="n">compute_correlation_vector</span><span class="p">(</span><span class="n">data_u</span><span class="p">,</span> <span class="n">data_v</span><span class="p">,</span> <span class="n">xedges</span><span class="p">,</span> <span class="n">yedges</span><span class="p">)</span>
 
+<span class="c1"># Prepare the grid for plotting vectors</span>
 <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xedges</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xedges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">xedges</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">yedges</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">yedges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">yedges</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">x_grid</span><span class="p">,</span> <span class="n">y_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">)</span>
 
-<span class="c1"># Plotting the result</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x_grid</span><span class="p">,</span> <span class="n">y_grid</span><span class="p">,</span> <span class="n">ex</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">ey</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="n">angles</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">headaxislength</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">quiver</span><span class="o">.</span><span class="n">Quiver</span> <span class="n">at</span> <span class="mh">0x10c391460</span><span class="o">&gt;</span>
+<span class="c1"># Plotting the correlation vectors using quiver</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span>
+    <span class="n">x_grid</span><span class="p">,</span> <span class="n">y_grid</span><span class="p">,</span> <span class="n">ex</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">ey</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="c1"># Transpose ex, ey for correct orientation if needed by your data</span>
+    <span class="n">angles</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">headaxislength</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># Customize quiver appearance</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span> <span class="c1"># Set arrow color to red for better visibility against grayscale background</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Activator Concentration (U)&#39;</span><span class="p">)</span> <span class="c1"># Add axis labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Inhibitor Concentration (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Adjacent Correlation Vectors on Density Map&#39;</span><span class="p">)</span> <span class="c1"># Add a title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span> <span class="c1"># Add a subtle grid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="_images/output_7_1.png" src="_images/output_7_1.png" />
-</section>
-<section id="visualizating-the-correlation-degree-p">
-<h2>Visualizating the correlation degree p<a class="headerlink" href="#visualizating-the-correlation-degree-p" title="Link to this heading">¶</a></h2>
+<p>—</p>
+<p>### Visualizing the Correlation Degree ($p$)</p>
+<p>The <strong>correlation degree</strong> $p$ represents the normalized length of the correlation vector, indicating the strength of the local correlation. We can calculate and visualize it as a spatial map, providing insights into where correlations are strongest in the phase space.</p>
+<p>The correlation degree $p$ is given by:</p>
 <div class="math notranslate nohighlight">
-\[p = (ex^2 + ey^2)^{1/2}\]</div>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">ex</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">ey</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+\[p = \sqrt{e_x^2 + e_y^2}\]</div>
+<p>where $e_x$ and $e_y$ are the components of the normalized correlation vector.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the correlation degree map</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">ex</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">ey</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Using the ex, ey computed in the previous step</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="c1"># Adjust figure size</span>
+
+<span class="c1"># Define the extent for the imshow plot to match the bin edges</span>
 <span class="n">myextent</span> <span class="o">=</span> <span class="p">[</span><span class="n">xedges</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xedges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">yedges</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">yedges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="n">myextent</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;p=(ex**2+ey**2)^0.5&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span> <span class="n">at</span> <span class="mh">0x10e92ed90</span><span class="o">&gt;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">myextent</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span> <span class="c1"># Use a colormap like &#39;plasma&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Correlation Degree Map: $p = </span><span class="se">\\</span><span class="s1">sqrt{e_x^2 + e_y^2}$&#39;</span><span class="p">)</span> <span class="c1"># Use LaTeX for the title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Activator Concentration (U)&#39;</span><span class="p">)</span> <span class="c1"># Add axis labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Inhibitor Concentration (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Correlation Degree ($p$)&#39;</span><span class="p">)</span> <span class="c1"># Add a colorbar with label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="_images/output_9_1.png" src="_images/output_9_1.png" />
-</section>
 </section>
 
 
@@ -146,13 +170,15 @@ function:</p>
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="concept.html">Concept</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature.html">Features &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concept.html">Concept &amp; Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; Usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Adjacent Correlation Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_mapping.html">Adjacent Correlation Mapping</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Data Exploration:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute and Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credit.html">Credit</a></li>
 </ul>
 

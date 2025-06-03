@@ -9,110 +9,75 @@
 Adjacent Correlation Analysis: Revealing Regularities in Image Data
 ======================================================================
 
-.. .. image:: http://unmaintained.tech/badge.svg
-..   :target: http://unmaintained.tech
-..   :alt: No Maintenance Intended
+Adjacent Correlation Analysis (ACA) is a Python package designed to uncover hidden regularities and relationships within image datasets by analyzing localized correlations. It provides tools for both **Adjacent Correlation Analysis** (visualizing correlations in phase space) and **Adjacent Correlation Map** (spatial mapping of correlation properties).
 
-.. *Note: This template is not maintained anymore,
-.. use the* `tutorial <https://github.com/readthedocs/tutorial-template/>`_ *instead.*
-
-.. $project will solve your problem of where to start with documentation,
-.. by providing a basic explanation of how to do it easily.
-
-.. Look how easy it is to use:
-
-..     import project
-..     # Get your stuff done
-..     project.do_stuff()
-
-
-
-
+---
 
 Features & Design
 ------------------
-A Python package for performing adjacent correlation analysis on image data. 
-
-The input are images 1 and image 2, in the form of Numpy arrays of the same size. The method is designed to reveal regularities by comparing these images through correlations.
+ACA helps you analyze relationships between two images (Numpy arrays of the same size) by comparing them through correlations. The core idea is to reveal **adjacency-induced correlations** that might be obscured when looking at global statistics.
 
 .. image:: images/illus_website.jpg
    :alt: Adjacent Correlation Analysis
    :align: center
    :width: 600px
 
+The *adjacent correlation analysis* process involves calculating and visualizing the *adjacency-induced correlation* within the phase space defined by the two images. The *adjacent correlation map* then provides a spatially-resolved representation of these correlations.
 
-The *adjacent correlation analysis* is performed by calculating and visualizing the *adjacency-induced correlation* in the phase space. The *adjacent correlation map* is a spatially-resolved representation of the correlation between the two images.
+These methods are specifically designed to represent data using correlations, facilitating powerful visualization and interactive data exploration.
 
-The methods are designed to represent the data using correlations, which can be used to perform visualization and interactive data explorations. 
+---
 
-.. _adjacency-correlation-analysis:
-
-
-------------------------------
 Adjacent Correlation Analysis
 ------------------------------
-
-
-The  *adjacent correlation analysis* is a method to derive correlation vectors,  which can be plotted on 
-top of the density map representing the Probably Density Function (PDF) of the two images data. 
+The **Adjacent Correlation Analysis** method derives correlation vectors that can be plotted on top of the Probability Density Function (PDF) of the two image datasets. These vectors indicate the local correlation strength and direction within the phase space.
 
 .. image:: images/pdf_aca.png
    :alt: Example of adjacent correlation analysis
    :align: center
    :width: 600px
 
-**The adjacent correlation analysis applied to data from MHD turbulence simulation.**  The output consists of a correlation vector field overlaid on the density map (density PDF). The correlation degree is the normalized length of the vector, and the both the length and the orientation of the vector can be seen in the *adjacent correlation plot*.
-
-
+**Application to MHD Turbulence Simulation Data:** This example shows correlation vector fields overlaid on a density map (density PDF). The **correlation degree** represents the normalized length of the vector, and both the length and orientation are clearly visible in the *adjacent correlation plot*.
 
 .. image:: images/pdf_aca_lorentz.png
    :alt: Example of adjacent correlation analysis
    :align: center
    :width: 600px
 
-**The adjacent correlation analysis applied to the Lorentz system.**  The vectors derived using the adjacent correlation analysis reflects a projected view of the vector field in the phase space on the x-y plane. 
+**Application to the Lorentz System:** Here, vectors derived using adjacent correlation analysis provide a projected view of the vector field in the phase space on the x-y plane, illustrating the system's dynamic regularities.
 
+---
 
-
-.. _adjacent-correlation-map:
-
-
-------------------------------
 Adjacent Correlation Map
 ------------------------------
-The *adjacent correlation map* is a method to provide maps of the correlation between the two images. It contains a correlation angle map, a map of the correlation degree, and a correlation coefficient map.
+The **Adjacent Correlation Map** provides spatially-resolved maps of the correlations between two images. It generates a correlation angle map, a correlation degree map, and a correlation coefficient map.
 
 .. image:: images/adjacent_correlation_map.png
    :alt: Example of adjacent correlation map
    :align: center
    :width: 600px
 
+**Application to Temperature and Precipitation Data:** This output demonstrates the correlation angle map, correlation degree map, and correlation coefficient map (available as program output). The **correlation angle map** indicates the direction of the correlation in phase space, while the **correlation degree map** shows the strength of the correlation. Different colors highlight distinct correlation patterns between temperature (T) and log(precipitation).
 
-**The adjacent correlation map applied to temperature and precipitation data.**   The output consists of a correlation angle map, a map of the correlation degree, and a correlation coefficient map (available as the program output). The correlation angle map shows the direction of the correlation in the phase space, while the correlation degree map shows the strength of the correlation. *Different colors represent different ways temperature T,x  and log(percipation) are correlated*.
+---
 
+References
 ------------------------------
-References:
-------------------------------
+If you utilize this software in your research, we kindly request you cite the following papers:
 
-If you make use of this software for your work we would appreciate it if you would cite the papers:
+**Adjacent Correlation Analysis:**
 
-Adjacent Correlation Analysis:
+* *Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis*, Li (2025)
 
+**Adjacent Correlation Map:**
 
-*  *Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis， Li (2025)*
+* *Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery*, Li (2025)
 
-Adjacent Correlation Map:
-
-* *Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery， Li (2025)*
-
-
-
-.. _installation-usage:
+---
 
 Installation & Usage
 -----------------------
 
--------------
 Requirements:
 -------------
 
@@ -121,255 +86,232 @@ Requirements:
 * SciPy
 * Matplotlib
 
-
 Installation can be done using pip:
 
 .. code:: bash
-  
+
   pip install adjacent-correlation-analysis
 
-
-or by cloning the repository and running:
+Alternatively, you can clone the repository and install it in editable mode:
 
 .. code:: bash
-  
+
   git clone https://github.com/gxli/Adjacent-Correlation-Analysis
   cd Adjacent-Correlation-Analysis
   pip install -e .
 
------------
-How to use 
+How to Use
 -----------
 
-
-To perform the **adjacent correlation analysis**, you can use the following code:
+To perform the **adjacent correlation analysis** and generate a plot of the correlation vectors overlaid on the density map:
 
 .. code-block:: python
 
    import adjacency_correlation_analysis as aca
+   import matplotlib.pyplot as plt
+
+   # xdata and ydata are your two image arrays
    aca.adjacent_correlation_plot(xdata, ydata)
    plt.show()
 
-which computes the corelation vector, and generates a plot of the correlation vectors overlaid on the density density constructed from the two images.
+Available parameters for `adjacent_correlation_plot`:
 
-There are a number of parameters
+* ``bins``: Number or sequence of bins used for density estimation. If `None`, an optimal bin size is automatically determined. Defaults to `None`.
+* ``ax``: Matplotlib axes object to plot on. Defaults to `plt.gca()`.
+* ``scale``, ``cmap``, etc.: Plotting parameters for customization.
+* ``**kwargs``: Additional arguments passed to `matplotlib.pyplot.imshow` and `matplotlib.pyplot.quiver`.
+* ``cmap``: Colormap to be used for the density map. Defaults to 'viridis'.
+* ``facecolor``: Face color of the quiver arrows. Defaults to 'w'.
+* ``scale``: Scaling factor for the quiver arrows. Defaults to 20.
+* ``lognorm``: Whether to use logarithmic normalization for the density map. Defaults to `False`.
 
-   - ``bins:`` Number or sequence of bins used to compute the histogram for density estimation. 
-              If None, an optimal bin size is automatically determined. Defaults to None.
-   -   ``ax:`` matplotlib axes object. Defaults to plt.gca().
-   -   ``scale, cmap, etc.``: plotting parameters.
-   -   ``**kwargs``: Additional arguments for :code:`matplotlib.pyplot.imshow` and :code:`quiver`.
-   -   ``cmap:`` colormap to be used. Defaults to 'viridis'.
-   -   ``facecolor:`` facecolor of the quiver arrows. Defaults to 'w'.
-   -   ``scale:`` scaling factor for the quiver arrows. Defaults to 20.
-   -   ``lognorm:`` whether to use logarithmic normalization for the density map. Defaults to False.
-
-To compute the adjacent correlation vectors, one can also use
+To compute the adjacent correlation vectors directly:
 
 .. code:: python
 
    import numpy as np
    import adjacency_correlation_analysis as aca
+
+   # xdata and ydata are your two image arrays
    H, xedges, yedges = np.histogram2d(xdata, ydata)
    ex, ey = aca.compute_correlation_vector(xdata, ydata, xedges, yedges)
 
-where the input
+**Inputs:**
 
-- ``xdata`` and ``ydata`` are the two images (Numpy arrays) to be compared.
-- ``xedges`` and ``yedges`` are the edges of the bins used to compute the histogram for density estimation.
+* ``xdata`` and ``ydata``: The two input images (Numpy arrays) to be compared.
+* ``xedges`` and ``yedges``: The bin edges used to compute the histogram for density estimation.
 
-The output is a tuple containing:
+**Outputs (tuple):**
 
-- ``p``: Degree of correlation 
-- ``nx``: x-component of the correlation vector (normalized)
-- ``ny``: y-component of the correlation vector (normalized)
+* ``p``: Degree of correlation.
+* ``nx``: Normalized x-component of the correlation vector.
+* ``ny``: Normalized y-component of the correlation vector.
+* ``i``: Total intensity of the correlation vector, $i = \sqrt{Ex^2 + Ey^2}$, where $Ex = \frac{d p_1}{d x}$ and $Ey = \frac{d p_2}{d x}$.
 
-- ``i``: total intensity of the correlation vector. i = (Ex**2 + Ey**2)**0.5, Ex = d p_1 / d x, Ey = d p_2 / d x
-
-To visualize the result:
+To visualize the computed vectors:
 
 .. code:: python
 
    import matplotlib.pyplot as plt
+   import numpy as np
+
+   # Assuming ex, ey, xedges, yedges are already computed
    xx = np.linspace(xedges[0], xedges[-1], len(xedges)-1)
    yy = np.linspace(yedges[0], yedges[-1], len(yedges)-1)
    x_grid, y_grid = np.meshgrid(xx, yy)
-    
-    # Plotting the result
-   plt.quiver(x_grid, y_grid, ex.T, ey.T, facecolor='w',angles='xy',scale=30,headaxislength=0)
 
-   
-To compute the **adjacent correlation map**
+   # Plotting the result
+   plt.quiver(x_grid, y_grid, ex.T, ey.T, facecolor='w', angles='xy', scale=30, headaxislength=0)
+   plt.show()
+
+To compute the **adjacent correlation map**:
 
 .. code:: python
 
    import adjacency_correlation_analysis as aca
+
+   # xdata and ydata are your two image arrays
    p, angle, corr_coef, i = aca.compute_correlation_map(xdata, ydata)
 
-where the input
-- ``xdata`` and ``ydata`` are the two images (Numpy arrays) to be compared.
+**Inputs:**
 
-The output is a tuple containing:
+* ``xdata`` and ``ydata``: The two input images (Numpy arrays) to be compared.
 
- - ``p``: the correlation degree map, which is the normalized length of the correlation vector, p = (l_max / (l_min**2 + l_max**2)**0.5)
- - ``angle``: the correlation angle map, which is the direction of the correlation in the phase space, angle = np.arctan2(Ey, Ex)
- - ``corr_coef``: the correlation coefficient map, which is equivalent to the Pearson correlation coefficient.
- - ``i``: the intensity map, which is the total gradient in the phase space,  i = (Ex**2 + Ey**2)**0.5, Ex = d p_1 / d x, Ey = d p_2 / d x
+**Outputs (tuple):**
 
+* ``p``: The **correlation degree map**, which is the normalized length of the correlation vector, $p = \frac{l_{max}}{(l_{min}^2 + l_{max}^2)^{1/2}}$.
+* ``angle``: The **correlation angle map**, representing the direction of the correlation in phase space, $angle = \arctan2(Ey, Ex)$.
+* ``corr_coef``: The **correlation coefficient map**, equivalent to the Pearson correlation coefficient.
+* ``i``: The **intensity map**, representing the total gradient in the phase space, $i = \sqrt{Ex^2 + Ey^2}$, where $Ex = \frac{d p_1}{d x}$ and $Ey = \frac{d p_2}{d x}$.
 
-
-To visualize the result:
+To visualize the map results:
 
 .. code:: python
 
    import matplotlib.pyplot as plt
+
+   # Assuming p and angle are already computed
    plt.imshow(p)
    plt.imshow(angle)
    plt.show()
 
+---
 
 Foundation of Adjacent Correlation Analysis
 --------------------------------------------
 
-.. _adjacency-induced-correlations:
-
+Adjacency-induced Correlations:
 --------------------------------
-Adjacency-induced correlations:
---------------------------------
-
-The method is based on the observation that image values measured in adjacent locations often exhibit stronger correlations compared to image values measured over the whole region. Take the following example of the temperature and perception data from the North America:  When plotted together, we reveal a phase space where temperature and precipitation are not well-correlated. To reveal regularities, we choose three boxes (R1, R2 and R3) at different locations. From the west to the east, the temperature and precipitation exhibit correlations ranging from negative, to positive, then to weak correlations. These local correlations are undermined in the global correlation plot. 
-
+The methodology is rooted in the observation that image values measured in **adjacent locations** often exhibit stronger, more discernible correlations compared to values measured across an entire region. Consider the example of temperature and precipitation data across North America: when plotted globally, they may appear weakly correlated. However, by selecting localized regions (R1, R2, R3), distinct local correlations emerge—ranging from negative to positive to weak—that are otherwise obscured by the overall global average.
 
 .. image:: images/adjacency_induced.png
-   :alt: Adjacent Correlation Map
+   :alt: Adjacency-induced Correlations
    :align: center
    :width: 600px
 
-**Adjacency-induced correlations:** Values measured in small boxes, R1, R2, and R3 are stronger than correlations measured over the whole region.  
+**Adjacency-induced correlations:** Values measured in small boxes (R1, R2, and R3) demonstrate stronger correlations than those measured over the entire region.
 
+The *adjacent correlation analysis* is designed to reveal these localized correlations within the phase space, while the *adjacent correlation map* provides a spatial representation of these correlations in the measurement domain.
 
-The *adjacent correlation analysis* is a method to reveal these local correlations in the phase space. The *adjacent correlation map* provide maps of correlations in the space were the quantities are measured. 
+Given two images, $p_1(x, y)$ and $p_2(x, y)$, the *adjacency correlation map* comprises:
 
-Given two images, :math:`p_1(x, y)` and :math:`p_2(x, y)`, the *adjacency correlation map* contains a correlation angle map,
+* A **correlation angle map**:
+    .. math::
+      \theta(x,y) = \arctan\left(\frac{ d p_2}{d p_1}\right)
 
-.. math::
-  \theta(x,y) = \arctan(\frac{ d p_2}{d p_1})
+* A **correlation degree map**:
+    .. math::
+       p(x,y) = \frac{l_{max}}{(l_{min}^2 + l_{max}^2)^{1/2}}
 
-a map of the correlation degree:
+    where $l_{min}$ and $l_{max}$ are the minimum and maximum lengths of the correlation ellipse.
 
-.. math::
-   p(x,y) = \frac{l_{max}}{(l_{min}^2 + l_{max}^2)^{1/2}}
+* A **correlation coefficient map**:
+    .. math::
+       r(x,y) = \frac{\sigma(p_1 p_2)}{ \sigma(p_1) \sigma(p_2)}
 
-where :math:`l_{min}` and :math:`l_{max}` are the minimum and maximum lengths of the correlation ellipse, and a correlation coefficient map:
+    which is equivalent to the Pearson correlation coefficient.
 
-.. math::
-   r(x,y) = \frac{\sigma(p_1 p_2)}{ \sigma(p_1) \sigma(p_2)}
+The *adjacent correlation plot* then provides a visual representation of these correlations within the phase space.
 
+---
 
-which is the equivalent to the Pearson correlation coefficient.
+Superimposing Correlations Using Stokes Parameters
+--------------------------------------------------
+To effectively superimpose the adjacent correlation vectors, we leverage **Stokes parameters**, commonly used to describe the polarization state of light. Here, they are adapted to represent the correlation vectors.
 
-The *adjacent correlation plot* is a representation of these correlations in the phase space.
-
--------------------------------------------------
-Superimpose correlations using Stokes parameters
--------------------------------------------------
-
-To superimpose the adjacent correlation vectors, we can use Stokes parameters. The Stokes parameters are a set of four parameters that describe the polarization state of light. In this case, we can use them to represent the correlation vectors.
-
-
-In the :math:`p_1-p_2` space, the correlation vector is 
+In the $p_1-p_2$ phase space, the correlation vector is defined as:
 
 .. math::
-       \vec{E} = (E_x, E_y) = ({d} p_1, {d} p_2)
+       \vec{E} = (E_x, E_y) = (dp_1, dp_2)
 
-where the pseudo-Stokes parameters are defined as:
+The pseudo-Stokes parameters are then defined as:
 
 .. math::
   I = \frac{1}{2} (E_x^2 + E_y^2) \\
   Q = \frac{1}{2} (E_x^2 - E_y^2)\\
   U = E_x E_y\\
 
-The stokes parameters are used to superimpose these correlation vectors, and in the last step, the correlation angle and degree can be computed from the stokes parameter using 
-
+These Stokes parameters are used to combine and represent multiple correlation vectors. The correlation angle and degree can subsequently be computed from the Stokes parameters using:
 
 .. math::
       \theta = \frac{1}{2} \arctan \left( \frac{U}{Q} \right)
 
-    p = \left( \left( Q/I\right)^2 + \left(U/I\right)  \right)^{1/2}
+    p = \left( \left( Q/I\right)^2 + \left(U/I\right)^2  \right)^{1/2}
 
-
-From which, :math:`E_x` and :math:`E_y` can be computed. 
+From these, $E_x$ and $E_y$ can be re-derived.
 
 .. image:: images/stokes.png
    :alt: Stokes Parameters
    :align: center
    :width: 600px
 
+---
 
-
--------------------------
-Manifold Interpretation:
+Manifold Interpretation
 -------------------------
 .. image:: images/interpretation.png
    :alt: Manifold Interpretation
    :align: center
    :width: 600px
 
-What do the lines seen in the adjacent correlation plot mean?
+What do the lines observed in the adjacent correlation plot signify?
 
-For a system controlled by a series of PDEs, a fast process will restrict the system to a low-dimensional manifold in the phase space, where the local variations can be described by a (spin-2) vector field on this manifold. The existence of some slow variables ($C$) might serve the role of separating different trajectories, which correspond to different spatially coherent regions. 
+For systems governed by partial differential equations (PDEs), rapid processes can constrain the system to a low-dimensional **manifold** within the phase space. On this manifold, local variations can be described by a vector field. The presence of slowly evolving variables ($C$) might play a role in separating different trajectories, which in turn correspond to distinct spatially coherent regions.
 
-Consider the correlation between income and the size of the apartment, when measured in a localized regions, families with larger income tend to live in larger apartments, and visa versa. However, when considering the whole country, the correlation between income and apartment size is weak. This is because the size of the apartment is not only a function of the income, but also depends on other hidden parameters, such as GDP per capita, city, size, etc... This hidden, slow-changing parameters, when not measured, can induce these local correlations.
+Consider the correlation between income and apartment size. When measured in localized regions, higher income often correlates with larger apartments, and vice versa. However, across an entire country, this correlation might appear weak. This is because apartment size is influenced not only by income but also by other **hidden, slow-changing parameters** such as GDP per capita, city size, etc. When these unmeasured parameters vary slowly across space, they can induce the observed local correlations.
 
-*The correlation vectors thus follow lines of constant C, where C is a hidden, slow-varying parameter.*
+Thus, the correlation vectors observed in the adjacent correlation plot tend to follow lines of constant $C$, where $C$ represents a hidden, slow-varying parameter.
 
+---
 
-
-
-Interactive Data Exploration:
-
-It is advertised to  use softwares such as Glue \url{https://glueviz.org/}, to visualize the data.
+Interactive Data Exploration
+----------------------------
+Adjacent Correlation Analysis is designed to be highly compatible with interactive visualization tools. We recommend using software like `Glue <https://glueviz.org/>`_ to explore your data interact capabilities.
 
 .. image:: images/interactive.png
    :alt: Interactive Data Exploration
    :align: center
    :width: 600px
 
-**Interactive Data Exploration.**
+**Interactive Data Exploration:** ACA facilitates interactive exploration of complex datasets, revealing insights that might be missed with static visualizations.
 
-
+---
 
 Contribute
 ----------
+We welcome contributions to the Adjacent Correlation Analysis project!
 
-- Issue Tracker: github.com/Adjacent-Correlation-Analysis/issues
-- Source Code: github.com/Adjacent-Correlation-Analysis
+* **Issue Tracker:** `github.com/Adjacent-Correlation-Analysis/issues <https://github.com/Adjacent-Correlation-Analysis/issues>`_
+* **Source Code:** `github.com/Adjacent-Correlation-Analysis <https://github.com/Adjacent-Correlation-Analysis>`_
 
+---
 
 Support
 ----------
+If you encounter any issues or have questions, please reach out. We have a mailing list available at: `https://groups.google.com/g/adjacentcorrelationanalysis <https://groups.google.com/g/adjacentcorrelationanalysis>`_
 
-If you are having issues, please let us know.
-We have a mailing list located at: https://groups.google.com/g/adjacentcorrelationanalysis
-
-
-Citation
---------
-If you make use of this software for your work we would appreciate it if you would cite the paper:
-
-Adjacent Correlation Analysis:
-
-- Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis， Li 2025
-
-
-Adjacent Correlation Map:
-
-- Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery， Li 2025
-
+---
 
 License
 -------
-
 The project is licensed under the BSD license.
-
-

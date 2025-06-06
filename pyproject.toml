@@ -7,7 +7,7 @@ authors = [
 ]
 license = {text = "BSD"}
 readme = "README.rst"
-requires-python = "3.0"
+requires-python = ">=3.0"
 dependencies = [
     "numpy",
     "scipy",

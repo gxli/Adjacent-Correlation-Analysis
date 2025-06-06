@@ -96,9 +96,8 @@ Installation can be done using pip:
 
 .. code:: bash
 
-  pip install adjacent-correlation-analysis
-
-Alternatively, you can clone the repository and install it in editable mode:
+   pip install -i https://test.pypi.org/simple/ adjacent-correlation-analysis==0.1.0
+   Alternatively, you can clone the repository and install it in editable mode:
 
 .. code:: bash
 

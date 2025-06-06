@@ -17,8 +17,7 @@ Installation can be done using pip:
 
 .. code:: bash
   
-  pip install adjacent-correlation-analysis
-
+    pip install -i https://test.pypi.org/simple/ adjacent-correlation-analysis==0.1.0
 
 or by cloning the repository and running:
 

@@ -9,7 +9,13 @@
 Adjacent Correlation Analysis: Revealing Regularities in Image Data
 ======================================================================
 
-Adjacent Correlation Analysis (ACA) is a Python package designed to uncover hidden regularities and relationships within image datasets by analyzing localized correlations. It provides tools for both **Adjacent Correlation Analysis** (visualizing correlations in phase space) and **Adjacent Correlation Map** (spatial mapping of correlation properties).
+Adjacent Correlation Analysis (ACA) is a Python package designed to uncover
+hidden regularities and relationships within image datasets by analyzing
+localized correlations. It provides tools for both **Adjacent Correlation
+Analysis** (visualizing correlations in phase space) and **Adjacent Correlation
+Map** (spatial mapping of correlation properties). 
+
+Documentation Available at: `ReadTheDocs <https://adjacent-correlation-analysis.readthedocs.io/en/latest/>`_.
 
 ---
 

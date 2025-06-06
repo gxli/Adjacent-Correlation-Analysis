@@ -314,4 +314,4 @@ If you encounter any issues or have questions, please reach out. We have a maili
 
 License
 -------
-The project is licensed under the BSD license.
+The project is licensed under the GPLv3. 

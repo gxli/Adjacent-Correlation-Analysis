@@ -113,7 +113,7 @@ To perform the **adjacent correlation analysis** and generate a plot of the corr
 
 .. code-block:: python
 
-   import adjacency_correlation_analysis as aca
+   import adjacent_correlation_analysis as aca
    import matplotlib.pyplot as plt
 
    # xdata and ydata are your two image arrays

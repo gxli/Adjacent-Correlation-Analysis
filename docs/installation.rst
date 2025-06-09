@@ -36,7 +36,7 @@ To perform the **adjacent correlation analysis**, you can use the following code
 
 .. code-block:: python
 
-   import adjacency_correlation_analysis as aca
+   import adjacent_correlation_analysis as aca
    aca.adjacent_correlation_plot(xdata, ydata)
    plt.show()
 

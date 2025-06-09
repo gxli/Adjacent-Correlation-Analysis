@@ -65,21 +65,8 @@ The **Adjacent Correlation Map** provides spatially-resolved maps of the correla
 
 **Application to Temperature and Precipitation Data:** This output demonstrates the correlation angle map, correlation degree map, and correlation coefficient map (available as program output). The **correlation angle map** indicates the direction of the correlation in phase space, while the **correlation degree map** shows the strength of the correlation. Different colors highlight distinct correlation patterns between temperature (T) and log(precipitation).
 
----
 
-References
-------------------------------
-If you utilize this software in your research, we kindly request you cite the following papers:
 
-**Adjacent Correlation Analysis:**
-
-* *Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis*, Li (2025)
-
-**Adjacent Correlation Map:**
-
-* *Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery*, Li (2025)
-
----
 
 Installation & Usage
 -----------------------
@@ -288,7 +275,7 @@ Consider the correlation between income and apartment size. When measured in loc
 
 Thus, the correlation vectors observed in the adjacent correlation plot tend to follow lines of constant $C$, where $C$ represents a hidden, slow-varying parameter.
 
----
+
 
 Interactive Data Exploration
 ----------------------------
@@ -301,7 +288,7 @@ Adjacent Correlation Analysis is designed to be highly compatible with interacti
 
 **Interactive Data Exploration:** ACA facilitates interactive exploration of complex datasets, revealing insights that might be missed with static visualizations.
 
----
+
 
 Contribute
 ----------
@@ -310,13 +297,56 @@ We welcome contributions to the Adjacent Correlation Analysis project!
 * **Issue Tracker:** `github.com/Adjacent-Correlation-Analysis/issues <https://github.com/Adjacent-Correlation-Analysis/issues>`_
 * **Source Code:** `github.com/Adjacent-Correlation-Analysis <https://github.com/Adjacent-Correlation-Analysis>`_
 
----
+
+
+
+References
+------------------------------
+If you utilize this software in your research, we kindly request you cite the following papers:
+
+**Adjacent Correlation Analysis:**
+
+* *Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis*, Li (2025)
+
+.. code:: bibtex
+
+   @article{li2025revealinghiddencorrelationscomplex,
+         title={Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis}, 
+         author={Guang-Xing Li},
+         year={2025},
+         eprint={2506.05759},
+         archivePrefix={arXiv},
+         primaryClass={physics.comp-ph},
+         url={https://arxiv.org/abs/2506.05759}, 
+   }
+
+
+**Adjacent Correlation Map:**
+
+* *Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery*, Li (2025)
+
+
+.. code:: bibtex
+
+
+   @article{li2025mappingcorrelationscoherenceadjacencybased,
+         title={Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery}, 
+         author={Guang-Xing Li},
+         year={2025},
+         eprint={2506.05758},
+         archivePrefix={arXiv},
+         primaryClass={physics.comp-ph},
+         url={https://arxiv.org/abs/2506.05758}, 
+   }
+
+
 
 Support
 ----------
 If you encounter any issues or have questions, please reach out. We have a mailing list available at: `https://groups.google.com/g/adjacentcorrelationanalysis <https://groups.google.com/g/adjacentcorrelationanalysis>`_
 
----
+
+
 
 License
 -------

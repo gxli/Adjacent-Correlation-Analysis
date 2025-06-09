@@ -48,7 +48,7 @@ There are a number of parameters
               If None, an optimal bin size is automatically determined. Defaults to None.
    -   ``ax:`` matplotlib axes object. Defaults to plt.gca().
    -   ``scale, cmap, etc.``: plotting parameters.
-   -   ``**kwargs``: Additional arguments for :code:`matplotlib.pyplot.imshow` and :code:`quiver`.
+   -   ``**kwargs``: Additional arguments for :code:`matplotlib.pyplot.ichrlshow` and :code:`quiver`.
    -   ``cmap:`` colormap to be used. Defaults to 'viridis'.
    -   ``facecolor:`` facecolor of the quiver arrows. Defaults to 'w'.
    -   ``scale:`` scaling factor for the quiver arrows. Defaults to 20.

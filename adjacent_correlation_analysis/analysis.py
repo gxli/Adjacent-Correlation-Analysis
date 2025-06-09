@@ -1,4 +1,3 @@
-from astropy.io import fits
 import numpy as np
 from operator import itemgetter
 

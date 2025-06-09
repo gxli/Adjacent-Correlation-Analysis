@@ -14,7 +14,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Adjacent Correlation Analysis" href="adjacent_correlation_analysis.html" />
-    <link rel="prev" title="Concept" href="concept.html" />
+    <link rel="prev" title="Concept &amp; Methods" href="concept.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -43,7 +43,7 @@
 <li><p>Matplotlib</p></li>
 </ul>
 <p>Installation can be done using pip:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>adjacent-correlation-analysis
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>adjacent-correlation-analysis<span class="o">==</span><span class="m">0</span>.1.1
 </pre></div>
 </div>
 <p>or by cloning the repository and running:</p>
@@ -56,7 +56,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <section id="how-to-use">
 <h2>How to use<a class="headerlink" href="#how-to-use" title="Link to this heading">¶</a></h2>
 <p>To perform the <strong>adjacent correlation analysis</strong>, you can use the following code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">adjacency_correlation_analysis</span> <span class="k">as</span> <span class="nn">aca</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">adjacent_correlation_analysis</span> <span class="k">as</span> <span class="nn">aca</span>
 <span class="n">aca</span><span class="o">.</span><span class="n">adjacent_correlation_plot</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -72,7 +72,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ax:</span></code> matplotlib axes object. Defaults to plt.gca().</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scale,</span> <span class="pre">cmap,</span> <span class="pre">etc.</span></code>: plotting parameters.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: Additional arguments for <code class="code docutils literal notranslate"><span class="pre">matplotlib.pyplot.imshow</span></code> and <code class="code docutils literal notranslate"><span class="pre">quiver</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>: Additional arguments for <code class="code docutils literal notranslate"><span class="pre">matplotlib.pyplot.ichrlshow</span></code> and <code class="code docutils literal notranslate"><span class="pre">quiver</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cmap:</span></code> colormap to be used. Defaults to ‘viridis’.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">facecolor:</span></code> facecolor of the quiver arrows. Defaults to ‘w’.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scale:</span></code> scaling factor for the quiver arrows. Defaults to 20.</p></li>
@@ -153,13 +153,15 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="concept.html">Concept</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature.html">Features &amp; Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concept.html">Concept &amp; Methods</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation &amp; Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_analysis.html">Adjacent Correlation Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adjacent_correlation_mapping.html">Adjacent Correlation Mapping</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Data Exploration:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive.html">Interactive Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manifold.html">Manifold Interpretation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribute and Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credit.html">Credit</a></li>
 </ul>
 
@@ -167,7 +169,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="concept.html" title="previous chapter">Concept</a></li>
+      <li>Previous: <a href="concept.html" title="previous chapter">Concept &amp; Methods</a></li>
       <li>Next: <a href="adjacent_correlation_analysis.html" title="next chapter">Adjacent Correlation Analysis</a></li>
   </ul></li>
 </ul>

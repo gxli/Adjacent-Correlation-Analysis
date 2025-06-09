@@ -17,8 +17,7 @@ Installation can be done using pip:
 
 .. code:: bash
   
-  pip install adjacent-correlation-analysis
-
+   pip install -i https://test.pypi.org/simple/ adjacent-correlation-analysis==0.1.1    
 
 or by cloning the repository and running:
 
@@ -37,7 +36,7 @@ To perform the **adjacent correlation analysis**, you can use the following code
 
 .. code-block:: python
 
-   import adjacency_correlation_analysis as aca
+   import adjacent_correlation_analysis as aca
    aca.adjacent_correlation_plot(xdata, ydata)
    plt.show()
 
@@ -49,7 +48,7 @@ There are a number of parameters
               If None, an optimal bin size is automatically determined. Defaults to None.
    -   ``ax:`` matplotlib axes object. Defaults to plt.gca().
    -   ``scale, cmap, etc.``: plotting parameters.
-   -   ``**kwargs``: Additional arguments for :code:`matplotlib.pyplot.imshow` and :code:`quiver`.
+   -   ``**kwargs``: Additional arguments for :code:`matplotlib.pyplot.ichrlshow` and :code:`quiver`.
    -   ``cmap:`` colormap to be used. Defaults to 'viridis'.
    -   ``facecolor:`` facecolor of the quiver arrows. Defaults to 'w'.
    -   ``scale:`` scaling factor for the quiver arrows. Defaults to 20.

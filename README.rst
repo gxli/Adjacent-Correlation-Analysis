@@ -45,7 +45,7 @@ The **Adjacent Correlation Analysis** method derives correlation vectors that ca
 
 **Application to MHD Turbulence Simulation Data:** This example shows correlation vector fields overlaid on a density map (density PDF). The **correlation degree** represents the normalized length of the vector, and both the length and orientation are clearly visible in the *adjacent correlation plot*.
 
-.. image:: images/illus_mapping.png
+.. image:: images/pdf_aca_lorentz.png
    :alt: Example of adjacent correlation analysis
    :align: center
    :width: 600px
@@ -58,7 +58,7 @@ Adjacent Correlation Map
 ------------------------------
 The **Adjacent Correlation Map** provides spatially-resolved maps of the correlations between two images. It generates a correlation angle map, a correlation degree map, and a correlation coefficient map.
 
-.. image:: images/adjacent_correlation_map.png
+.. image:: images/illus_mapping.png
    :alt: Example of adjacent correlation map
    :align: center
    :width: 600px

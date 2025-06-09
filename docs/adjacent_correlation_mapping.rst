@@ -1,6 +1,36 @@
 Adjacent Correlation Mapping
 *****************************
 
+
+
+
+
+
+------------------------------
+Adjacent Correlation Map
+------------------------------
+The *adjacent correlation map* is a method to provide maps of the correlation between the two images. It contains a correlation angle map, a map of the correlation degree, and a correlation coefficient map.
+
+.. image:: _static/illus_mapping.png
+   :alt: Example of adjacent correlation map
+   :align: center
+   :width: 500px
+
+
+
+------------------------------
+Example
+------------------------------
+
+
+**The adjacent correlation map applied to temperature and precipitation data.**
+The output consists of a correlation angle map, a map of the correlation degree,
+and a correlation coefficient map (available as the program output). The
+correlation angle map shows the direction of the correlation in the phase space,
+while the correlation degree map shows the strength of the correlation.
+*Different colors represent different ways temperature T,x  and log(percipation)
+are correlated*.
+
 This example shows how to compute and visualize the adjacent correlation
 map.
 

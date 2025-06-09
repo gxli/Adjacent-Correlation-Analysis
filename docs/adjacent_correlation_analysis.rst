@@ -5,7 +5,42 @@ Adjacent Correlation Analysis
 
 Let's walk through how to perform an adjacent correlation analysis using the `adjacent_correlation_analysis` package. We'll use example data representing a **Turing pattern**, specifically the activator (U) and inhibitor (V) concentrations.
 
----
+
+
+------------------------------
+Adjacent Correlation Analysis
+------------------------------
+
+
+The  *adjacent correlation analysis* is a method to derive correlation vectors,  which can be plotted on 
+top of the density map representing the Probably Density Function (PDF) of the two images data. 
+
+.. image:: _static/illus_aca.png
+   :alt: Example of adjacent correlation analysis
+   :align: center
+   :width: 500px
+
+**The adjacent correlation analysis applied to data from MHD turbulence simulation.**  The output consists of a correlation vector field overlaid on the density map (density PDF). The correlation degree is the normalized length of the vector, and the both the length and the orientation of the vector can be seen in the *adjacent correlation plot*.
+
+
+
+.. image:: _static/pdf_aca_lorentz.png
+   :alt: Example of adjacent correlation analysis
+   :align: center
+   :width: 500px
+
+**The adjacent correlation analysis applied to the Lorentz system.**  The
+vectors derived using the adjacent correlation analysis reflects a projected
+view of the vector field in the phase space on the x-y plane. 
+
+
+
+
+
+------------------------------
+Example
+------------------------------
+
 
 ### Data Loading and Visualization
 

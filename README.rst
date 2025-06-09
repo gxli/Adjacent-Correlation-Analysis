@@ -96,9 +96,7 @@ Installation can be done using pip:
 
 .. code:: bash
 
-   pip install -i https://test.pypi.org/simple/ adjacent-correlation-analysis==0.1.0
-
-
+   pip install -i https://test.pypi.org/simple/ adjacent-correlation-analysis==0.1.1
 
 Alternatively, you can clone the repository and install it in editable mode:
 

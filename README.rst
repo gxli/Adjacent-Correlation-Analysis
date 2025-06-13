@@ -294,7 +294,7 @@ Contribute
 ----------
 We welcome contributions to the Adjacent Correlation Analysis project!
 
-* **Issue Tracker:** `github.com/Adjacent-Correlation-Analysis/issues <https://github.com/Adjacent-Correlation-Analysis/issues>`_
+* **Issue Tracker:** `github.com/Adjacent-Correlation-Analysis/issues <https://github.com/gxli/Adjacent-Correlation-Analysis/issues>`_
 * **Source Code:** `github.com/Adjacent-Correlation-Analysis <https://github.com/Adjacent-Correlation-Analysis>`_
 
 
@@ -306,7 +306,7 @@ If you utilize this software in your research, we kindly request you cite the fo
 
 **Adjacent Correlation Analysis:**
 
-* *Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis*, Li (2025)
+* *Revealing hidden correlations from complex spatial distributions: Adjacent Correlation Analysis*, Li (2025), `arXiv:2506.05759 <https://arxiv.org/abs/2506.05759>`_
 
 .. code:: bibtex
 
@@ -323,7 +323,7 @@ If you utilize this software in your research, we kindly request you cite the fo
 
 **Adjacent Correlation Map:**
 
-* *Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery*, Li (2025)
+* *Mapping correlations and coherence: adjacency-based approach to data visualization and regularity discovery*, Li (2025), `arXiv:2506.05758 <https://arxiv.org/abs/2506.05758>`_
 
 
 .. code:: bibtex

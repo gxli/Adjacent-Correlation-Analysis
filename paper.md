@@ -63,6 +63,8 @@ using $i$, $q$, and $u$.
 
 
 
+For details of the method see `[@li2025revealinghiddencorrelationscomplex,@li2025mappingcorrelationscoherenceadjacencybased]`. The implementation
+can be found at [https://github.com/gxli/Adjacent-Correlation-Analysis](https://github.com/gxli/Adjacent-Correlation-Analysis).
 
 
 <!-- Citations to entries in paper.bib should be in
@@ -82,6 +84,8 @@ For a quick reference, the following citation commands can be used:
 # Figures
 
 
+-![Adjacent Correlation Analysis and Adjacent Correlation Map applied to MHD
+simulation data](images/illus_website.png)
 
 <!-- 
 Figures can be included like this:

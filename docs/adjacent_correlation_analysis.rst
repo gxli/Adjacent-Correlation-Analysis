@@ -1,7 +1,7 @@
 .. -*- mode: rst -*-
 
-Adjacent Correlation Analysis
-*****************************
+Adjacent Correlation Analysis: Spatially-aware 2D histograms for data visualization
+************************************************************************************
 
 Let's walk through how to perform an adjacent correlation analysis using the `adjacent_correlation_analysis` package. We'll use example data representing a **Turing pattern**, specifically the activator (U) and inhibitor (V) concentrations.
 

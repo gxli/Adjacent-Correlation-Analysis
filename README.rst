@@ -34,9 +34,16 @@ These methods are specifically designed to represent data using correlations, fa
 
 ---
 
-Adjacent Correlation Analysis
-------------------------------
-The **Adjacent Correlation Analysis** method derives correlation vectors that can be plotted on top of the Probability Density Function (PDF) of the two image datasets. These vectors indicate the local correlation strength and direction within the phase space.
+l------------------------------------------------------------------------------------
+The **adjacent correlation analysis** is a method which allow users to
+visualize the local correlations between two images in a more intuitive way.
+By comparing two images using  2D histograms, the spatial information is lost.
+The *adjacent correlation analysis* allows for the evaluation of vectors
+representing *locally-induced correlations* in the phase space.
+
+
+
+.. The **Adjacent Correlation Analysis** method derives correlation vectors that can be plotted on top of the Probability Density Function (PDF) of the two image datasets. These vectors indicate the local correlation strength and direction within the phase space.
 
 .. image:: images/illus_aca.png
    :alt: Example of adjacent correlation analysis
@@ -54,8 +61,8 @@ The **Adjacent Correlation Analysis** method derives correlation vectors that ca
 
 ---
 
-Adjacent Correlation Map
-------------------------------
+Adjacent Correlation Map: Visualizing Correlations between Quantities in Space
+ ---------------------------------------------------------------------------------
 The **Adjacent Correlation Map** provides spatially-resolved maps of the correlations between two images. It generates a correlation angle map, a correlation degree map, and a correlation coefficient map.
 
 .. image:: images/illus_mapping.png

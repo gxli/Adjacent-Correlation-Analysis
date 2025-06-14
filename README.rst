@@ -33,6 +33,7 @@ The *adjacent correlation analysis* process involves calculating and visualizing
 These methods are specifically designed to represent data using correlations, facilitating powerful visualization and interactive data exploration.
 
 ---
+
 Adjacent Correlation Analysis: Spatially-aware 2D histograms for data visualization
 ------------------------------------------------------------------------------------
 The **adjacent correlation analysis** is a method which allow users to
@@ -61,7 +62,7 @@ representing *locally-induced correlations* in the phase space.
 
 ---
 
-Adjacent Correlation Map: Visualizing Correlations between Quantities in Space
+Adjacent Correlation Map: Visualizing Correlations between Quantities
 ---------------------------------------------------------------------------------
 The **Adjacent Correlation Map** provides spatially-resolved maps of the correlations between two images. It generates a correlation angle map, a correlation degree map, and a correlation coefficient map.
 

@@ -62,7 +62,7 @@ representing *locally-induced correlations* in the phase space.
 ---
 
 Adjacent Correlation Map: Visualizing Correlations between Quantities in Space
- ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 The **Adjacent Correlation Map** provides spatially-resolved maps of the correlations between two images. It generates a correlation angle map, a correlation degree map, and a correlation coefficient map.
 
 .. image:: images/illus_mapping.png

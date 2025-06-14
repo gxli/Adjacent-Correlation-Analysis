@@ -1,4 +1,4 @@
-Adjacent Correlation Map: Visualizing Correlations between Quantities in Space
+Adjacent Correlation Map: Visualizing Correlations between Quantities
 *************************************************************************************
 
 

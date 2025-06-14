@@ -7,21 +7,21 @@ tags:
   - data visualization
 authors:
   - name: Guang-Xing Li
-    orcid: 0000-0000-0000-0000
+    orcid: 00000-0003-3144-1952
     equal-contrib: true
-    affiliation: "1, 2" # (Multiple affiliations must be quoted)
+    affiliation: "1" # (Multiple affiliations must be quoted)
 
 affiliations:
  - name: Guang-Xing Li, Yunnan University, China
    index: 1
 
-date: 3 June 2025
+date: 14 June 2025
 bibliography: paper.bib
 
 # Optional fields if submitting to a AAS journal too, see this blog post:
 # https://blog.joss.theoj.org/2018/12/a-new-collaboration-with-aas-publishing
-aas-doi: 10.3847/xxxxx <- update this with the DOI from AAS once you know it.
-aas-journal: Astrophysical Journal <- The name of the AAS journal.
+# aas-doi: 10.3847/xxxxx <- update this with the DOI from AAS once you know it.
+# aas-journal: Astrophysical Journal <- The name of the AAS journal.
 ---
 # Summary
 

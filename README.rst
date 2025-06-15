@@ -51,14 +51,14 @@ representing *locally-induced correlations* in the phase space.
    :align: center
    :width: 600px
 
-**Application to MHD Turbulence Simulation Data:** This example shows correlation vector fields overlaid on a density map (density PDF). The **correlation degree** represents the normalized length of the vector, and both the length and orientation are clearly visible in the *adjacent correlation plot*.
+.. **Application to MHD Turbulence Simulation Data:** This example shows correlation vector fields overlaid on a density map (density PDF). The **correlation degree** represents the normalized length of the vector, and both the length and orientation are clearly visible in the *adjacent correlation plot*.
 
-.. image:: images/pdf_aca_lorentz.png
-   :alt: Example of adjacent correlation analysis
-   :align: center
-   :width: 600px
+.. .. image:: images/pdf_aca_lorentz.png
+..    :alt: Example of adjacent correlation analysis
+..    :align: center
+..    :width: 600px
 
-**Application to the Lorentz System:** Here, vectors derived using adjacent correlation analysis provide a projected view of the vector field in the phase space on the x-y plane, illustrating the system's dynamic regularities.
+.. **Application to the Lorentz System:** Here, vectors derived using adjacent correlation analysis provide a projected view of the vector field in the phase space on the x-y plane, illustrating the system's dynamic regularities.
 
 ---
 

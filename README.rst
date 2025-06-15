@@ -46,7 +46,7 @@ representing *locally-induced correlations* in the phase space.
 
 .. The **Adjacent Correlation Analysis** method derives correlation vectors that can be plotted on top of the Probability Density Function (PDF) of the two image datasets. These vectors indicate the local correlation strength and direction within the phase space.
 
-.. image:: images/illus_aca.png
+.. image:: images/aca_poster.png
    :alt: Example of adjacent correlation analysis
    :align: center
    :width: 600px

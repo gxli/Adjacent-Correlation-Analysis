@@ -7,7 +7,7 @@ tags:
   - data visualization
 authors:
   - name: Guang-Xing Li
-    orcid: 00000-0003-3144-1952
+    orcid: 0000-0003-3144-1952
     equal-contrib: true
     affiliation: "1" # (Multiple affiliations must be quoted)
 

@@ -302,8 +302,9 @@ Contribute
 ----------
 We welcome contributions to the Adjacent Correlation Analysis project!
 
-* **Issue Tracker:** `github.com/Adjacent-Correlation-Analysis/issues <https://github.com/gxli/Adjacent-Correlation-Analysis/issues>`_
-* **Source Code:** `github.com/Adjacent-Correlation-Analysis <https://github.com/gxli/Adjacent-Correlation-Analysis>`_
+
+* **Issue Tracker:** `github.com/gxli/Adjacent-Correlation-Analysis/issues <https://github.com/gxli/Adjacent-Correlation-Analysis/issues>`_
+* **Source Code:** `github.com/gxli/Adjacent-Correlation-Analysis <https://github.com/gxli/Adjacent-Correlation-Analysis>`_
 
 
 

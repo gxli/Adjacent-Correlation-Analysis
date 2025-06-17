@@ -76,7 +76,7 @@ The **Adjacent Correlation Map** provides spatially-resolved maps of the correla
 
 
 
-Installation & Usage
+Installation & Usage 
 -----------------------
 
 Requirements:
@@ -303,7 +303,7 @@ Contribute
 We welcome contributions to the Adjacent Correlation Analysis project!
 
 * **Issue Tracker:** `github.com/Adjacent-Correlation-Analysis/issues <https://github.com/gxli/Adjacent-Correlation-Analysis/issues>`_
-* **Source Code:** `github.com/Adjacent-Correlation-Analysis <https://github.com/Adjacent-Correlation-Analysis>`_
+* **Source Code:** `github.com/Adjacent-Correlation-Analysis <https://github.com/gxli/Adjacent-Correlation-Analysis>`_
 
 
 

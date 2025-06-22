@@ -20,6 +20,21 @@ top of the density map representing the Probably Density Function (PDF) of the t
    :align: center
    :width: 500px
 
+**Application to MHD Turbulence Simulation Data:** This example shows correlation vector fields overlaid on a density map (density PDF). The **correlation degree** represents the normalized length of the vector, and both the length and orientation are clearly visible in the *adjacent correlation plot*.
+
+.. image:: _static/pdf_aca_lorentz.png
+   :alt: Example of adjacent correlation analysis
+   :align: center
+   :width: 600px
+
+**Application to the Lorentz System:** Here, vectors derived using adjacent correlation analysis provide a projected view of the vector field in the phase space on the x-y plane, illustrating the system's dynamic regularities.
+
+
+.. image:: _static/pdf_aca.png
+   :alt: Example of adjacent correlation analysis
+   :align: center
+   :width: 600px
+   
 .. **The adjacent correlation analysis applied to data from MHD turbulence simulation.**  The output consists of a correlation vector field overlaid on the density map (density PDF). The correlation degree is the normalized length of the vector, and the both the length and the orientation of the vector can be seen in the *adjacent correlation plot*.
 
 

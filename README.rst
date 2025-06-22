@@ -60,6 +60,15 @@ representing *locally-induced correlations* in the phase space.
 
 **Application to the Lorentz System:** Here, vectors derived using adjacent correlation analysis provide a projected view of the vector field in the phase space on the x-y plane, illustrating the system's dynamic regularities.
 
+
+.. image:: images/pdf_aca.png
+   :alt: Example of adjacent correlation analysis
+   :align: center
+   :width: 600px
+   
+**Application to a MHD simulations :** 
+
+
 ---
 
 Adjacent Correlation Map: Visualizing Correlations between Quantities

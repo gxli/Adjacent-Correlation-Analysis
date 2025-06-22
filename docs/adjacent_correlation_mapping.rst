@@ -11,7 +11,7 @@ Adjacent Correlation Map
 ------------------------------
 The *adjacent correlation map* is a method to provide maps of the correlation between the two images. It contains a correlation angle map, a map of the correlation degree, and a correlation coefficient map.
 
-.. image:: _static/acm_poster.png
+.. image:: _static/acm_climate_example.001.png
    :alt: Example of adjacent correlation map
    :align: center
    :width: 500px

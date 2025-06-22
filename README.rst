@@ -46,19 +46,19 @@ representing *locally-induced correlations* in the phase space.
 
 .. The **Adjacent Correlation Analysis** method derives correlation vectors that can be plotted on top of the Probability Density Function (PDF) of the two image datasets. These vectors indicate the local correlation strength and direction within the phase space.
 
-.. image:: images/aca_poster.png
+.. image:: images/aca_illus_climate.001.png
    :alt: Example of adjacent correlation analysis
    :align: center
    :width: 600px
 
-.. **Application to MHD Turbulence Simulation Data:** This example shows correlation vector fields overlaid on a density map (density PDF). The **correlation degree** represents the normalized length of the vector, and both the length and orientation are clearly visible in the *adjacent correlation plot*.
+**Application to MHD Turbulence Simulation Data:** This example shows correlation vector fields overlaid on a density map (density PDF). The **correlation degree** represents the normalized length of the vector, and both the length and orientation are clearly visible in the *adjacent correlation plot*.
 
-.. .. image:: images/pdf_aca_lorentz.png
-..    :alt: Example of adjacent correlation analysis
-..    :align: center
-..    :width: 600px
+.. image:: images/pdf_aca_lorentz.png
+   :alt: Example of adjacent correlation analysis
+   :align: center
+   :width: 600px
 
-.. **Application to the Lorentz System:** Here, vectors derived using adjacent correlation analysis provide a projected view of the vector field in the phase space on the x-y plane, illustrating the system's dynamic regularities.
+**Application to the Lorentz System:** Here, vectors derived using adjacent correlation analysis provide a projected view of the vector field in the phase space on the x-y plane, illustrating the system's dynamic regularities.
 
 ---
 
@@ -66,7 +66,7 @@ Adjacent Correlation Map: Visualizing Correlations between Quantities
 ---------------------------------------------------------------------------------
 The **Adjacent Correlation Map** provides spatially-resolved maps of the correlations between two images. It generates a correlation angle map, a correlation degree map, and a correlation coefficient map.
 
-.. image:: images/illus_mapping.png
+.. image:: images/acm_climate_example.001.png
    :alt: Example of adjacent correlation map
    :align: center
    :width: 600px

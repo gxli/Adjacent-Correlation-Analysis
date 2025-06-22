@@ -15,7 +15,7 @@ Adjacent Correlation Analysis
 The  *adjacent correlation analysis* is a method to derive correlation vectors,  which can be plotted on 
 top of the density map representing the Probably Density Function (PDF) of the two images data. 
 
-.. image:: _static/aca_poster.png
+.. image:: _static/aca_illus_climate.001.png
    :alt: Example of adjacent correlation analysis
    :align: center
    :width: 500px

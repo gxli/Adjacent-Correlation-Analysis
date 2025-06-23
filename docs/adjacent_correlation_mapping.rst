@@ -14,7 +14,7 @@ The *adjacent correlation map* is a method to provide maps of the correlation be
 .. image:: _static/acm_climate_example.001.png
    :alt: Example of adjacent correlation map
    :align: center
-   :width: 500px
+   :width: 900px
 
 
 

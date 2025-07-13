@@ -103,6 +103,7 @@ Installation can be done using pip:
    pip install -i https://test.pypi.org/simple/ adjacent-correlation-analysis==0.1.1
 
 or 
+
 .. code:: bash
 
    pip install adjacent-correlation-analysis==0.1.1

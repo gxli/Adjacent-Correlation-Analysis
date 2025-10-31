@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
-def adjacent_correlation_plot(xdata, ydata, bins=None, ax=None, scale=10, cmap='Blues_r', 
+def adjacent_correlation_plot(xdata, ydata, bins=100, ax=None, scale=10, cmap='Blues_r', 
                             color_bad='white', headaxislength=0, headlength=0, 
                             facecolor='r', xlabel='x', ylabel='y', lognorm=False, 
                             colorbar=True, **kwargs):

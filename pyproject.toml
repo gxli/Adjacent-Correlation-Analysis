@@ -1,6 +1,6 @@
 [project]
 name = "adjacent-correlation-analysis"
-version = "0.1.1"
+version = "0.1.2"
 description = "A python package to reveal regularites from complex image data using correlations"
 authors = [
     {name = "Guang-Xing Li",email = "ligx.ngc7293@gmail.com"}

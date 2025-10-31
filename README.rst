@@ -100,13 +100,13 @@ Installation can be done using pip:
 
 .. code:: bash
 
-   pip install -i https://test.pypi.org/simple/ adjacent-correlation-analysis==0.1.1
+   pip install -i https://test.pypi.org/simple/ adjacent-correlation-analysis==0.1.2
 
 or 
 
 .. code:: bash
 
-   pip install adjacent-correlation-analysis==0.1.1
+   pip install adjacent-correlation-analysis==0.1.2
 
 Alternatively, you can clone the repository and install it in editable mode:
 
